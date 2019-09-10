@@ -8,6 +8,7 @@ TagManager:
   - bg
   - tiles
   - player
+  - Switch
   layers:
   - Default
   - TransparentFX
