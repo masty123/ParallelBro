@@ -29,8 +29,19 @@ public class SwitchTurning : MonoBehaviour
                 {
                     TurnSwitch();
                 }
-                else {
-                    photonView.RPC("TurnSwitch",RpcTarget.AllBuffered);
+                else
+                {
+                    // network stuff send this information to who?
+                    RpcTarget target = RpcTarget.AllBuffered;
+                    switch (turningSwitch.Peek().switchType)
+                    {
+                        case SwitchType.EffectBoth: target = RpcTarget.AllBuffered; break;
+                        case SwitchType.EffectOwn: TurnSwitch(); return;
+                        case SwitchType.EffectOther: target = RpcTarget.OthersBuffered; break;
+                    }
+
+                    // sent
+                    photonView.RPC("TurnSwitch", target);
                 }
             }
         }
