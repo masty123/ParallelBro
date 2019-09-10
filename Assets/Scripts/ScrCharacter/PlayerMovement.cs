@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPun
 {
     public Character2DController controller;
 
@@ -15,19 +16,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        
+        //if (photonView.IsMine)
+        //{
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if(Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
+        //}
 
     }
 
     private void FixedUpdate()
-    {   
-        //Move player
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump = false;
+    {
+        //if (photonView.IsMine)
+        //{
+            //Move player
+            controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+            jump = false;
+        //}
     }
 }
