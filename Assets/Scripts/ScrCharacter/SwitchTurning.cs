@@ -16,7 +16,7 @@ public class SwitchTurning : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (turningSwitch.Peek() != null)
+            if (turningSwitch.Count != 0)
             {
                 turningSwitch.Peek().turn();
             }
