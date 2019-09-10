@@ -13,29 +13,35 @@ public class PlayerMovement : MonoBehaviourPun
 
     bool jump = false;
 
+    private void Start()
+    {
+        PhotonNetwork.OfflineMode = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
-        //if (photonView.IsMine)
-        //{
-            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        if (photonView != null && !photonView.IsMine)
+        {
+            return;
+        }
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-            if (Input.GetButtonDown("Jump"))
-            {
-                jump = true;
-            }
-        //}
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
 
     }
 
     private void FixedUpdate()
     {
-        //if (photonView.IsMine)
-        //{
-            //Move player
-            controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-            jump = false;
-        //}
+         if (photonView != null && !photonView.IsMine)
+        {
+            return;
+        }
+        //Move player
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
     }
 }
