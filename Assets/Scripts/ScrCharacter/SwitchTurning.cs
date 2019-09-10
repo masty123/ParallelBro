@@ -18,9 +18,14 @@ public class SwitchTurning : MonoBehaviour
         {
             if (turningSwitch.Count != 0)
             {
-                turningSwitch.Peek().turn();
+                TurnSwitch(turningSwitch.Peek());
             }
         }
+    }
+
+    void TurnSwitch(ITurningSwitch turningSwitch)
+    {
+        turningSwitch.turn();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
