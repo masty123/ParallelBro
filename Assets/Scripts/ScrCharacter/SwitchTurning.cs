@@ -28,12 +28,14 @@ public class SwitchTurning : MonoBehaviour
         if (collision.gameObject.GetComponent<ITurningSwitch>())
         {
             turningSwitch.Push(collision.gameObject.GetComponent<ITurningSwitch>());
+            Debug.Log(collision + " Added");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         turningSwitch.Pop();
+        Debug.Log(collision + " Removed");
     }
 
 }
