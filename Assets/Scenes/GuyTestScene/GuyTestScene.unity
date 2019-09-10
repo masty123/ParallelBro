@@ -616,10 +616,5 @@ PrefabInstance:
       propertyPath: RoomCodeText
       value: 
       objectReference: {fileID: 889278005}
-    - target: {fileID: 2093500197392636662, guid: fbd3be3d11406c945bbbaff759a32c9d,
-        type: 3}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 103, guid: 5f81da6e19bc7ff41a34793284d27d4e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd3be3d11406c945bbbaff759a32c9d, type: 3}
