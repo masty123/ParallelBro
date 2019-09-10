@@ -7,17 +7,20 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviourPunCallbacks
 {
-    public GameObject UserNameScreen, ConnectScreen;
+    public GameObject LoadingScreen;
+    public GameObject LobbyScreen;
+    private string username;
+    public Text UserNameText;
+    public InputField RoomCodeText;
 
-    public GameObject CreateUserNameButton;
-
-    public InputField UserNameInput, RoomNameInput;
+    public byte maxPlayersPerRoom = 2;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
+        // try to connect the master server
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -30,43 +33,48 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Connected to Lobby!!!");
-        UserNameScreen.SetActive(true);
+        // Change to auth;
+        username = GetRandomName();
+        // set game nickname
+        PhotonNetwork.NickName = username;
+        UserNameText.text = username;
+        Debug.Log("Name: " + username);
+
+        // switch screen
+        LobbyScreen.SetActive(true);
+        LoadingScreen.SetActive(false);
     }
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("Joined");
-        // base.OnJoinedRoom();
-        PhotonNetwork.LoadLevel(1);
+        Debug.Log("Joining");
+        PhotonNetwork.LoadLevel("guytestscene");
     }
 
     #region UIMethods
-    public void OnClick_CreateNameBtn()
-    {
-        if (UserNameInput.text.Length >= 2)
-        {
-            PhotonNetwork.NickName = UserNameInput.text;
-            UserNameScreen.SetActive(false);
-            ConnectScreen.SetActive(true);
-        }
-    }
-
     public void OnClick_JoinRoom()
     {
-        RoomOptions ro = new RoomOptions();
-        ro.MaxPlayers = 2;
-        PhotonNetwork.JoinOrCreateRoom(RoomNameInput.text, ro, TypedLobby.Default);
+        PhotonNetwork.JoinRoom(RoomCodeText.text);
+    }
+
+    public void OnClick_CreateRoom()
+    {
+        // random room code
+        string roomName = GetRandomRoomName();
+        Debug.Log("Created : #Roomname " + roomName);
+        PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions { MaxPlayers = maxPlayersPerRoom }, TypedLobby.Default);
     }
     #endregion
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    // use for testing as we don't have auth.
+    private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Ayesha", "Jenkins", "Margaret", "Summers", "Anita", "Finley", "Savannah", "Mcintosh" };
+    public string GetRandomName()
+    {
+        return names[Random.Range(0, names.Length)];
     }
 
-    // Update is called once per frame
-    void Update()
+    private string GetRandomRoomName()
     {
-
+        return Random.Range(100000, 999999).ToString();
     }
 }
