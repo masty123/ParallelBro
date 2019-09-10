@@ -34,8 +34,11 @@ public class SwitchTurning : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        turningSwitch.Pop();
-        Debug.Log(collision + " Removed");
+        if (collision.gameObject.GetComponent<ITurningSwitch>())
+        {
+            turningSwitch.Pop();
+            Debug.Log(collision + " Removed");
+        }
     }
 
 }
