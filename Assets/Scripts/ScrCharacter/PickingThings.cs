@@ -54,6 +54,7 @@ public class PickingThings : MonoBehaviour
         holdingItem.GetComponent<Rigidbody2D>().isKinematic = true;
         holdingItem.transform.SetParent(this.gameObject.transform);
         holdingItem.transform.localPosition = new Vector3(0, -0.07f, -0.1f);
+        holdingItem.GetComponent<IPickUp>().OnPickUp();
     }
 
     [PunRPC]
@@ -61,6 +62,7 @@ public class PickingThings : MonoBehaviour
     {
         holdingItem.transform.SetParent(null);
         holdingItem.GetComponent<Rigidbody2D>().isKinematic = false;
+        holdingItem.GetComponent<IPickUp>().OnDrop();
         holdingItem = null;
     }
 

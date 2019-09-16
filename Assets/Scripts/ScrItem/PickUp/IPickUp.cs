@@ -23,4 +23,10 @@ public abstract class IPickUp : MonoBehaviour
         isUsable = status;
     }
 
+    //This function will be called when player pickup the item
+    public void OnPickUp() { }
+
+    //This function will be called when player drop the item
+    public void OnDrop() { }
+
 }
