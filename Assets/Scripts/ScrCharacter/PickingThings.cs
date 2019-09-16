@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class SwitchTurning : MonoBehaviour
+public class PickingThings : MonoBehaviour
 {
     private PhotonView photonView;
-    Stack<ITurningSwitch> turningSwitch;
+    GameObject toPickUp;
+    GameObject holdingItem;
 
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
-        turningSwitch = new Stack<ITurningSwitch>();
     }
 
     private void Update()
@@ -23,51 +23,49 @@ public class SwitchTurning : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (turningSwitch.Count != 0)
+            if (holdingItem == null)
             {
                 if (PhotonNetwork.OfflineMode)
                 {
-                    TurnSwitch();
+                    PickUpItem();
                 }
                 else
                 {
                     // network stuff send this information to who?
                     RpcTarget target = RpcTarget.AllBuffered;
-                    switch (turningSwitch.Peek().switchType)
+                    switch (holdingItem.GetComponent<IPickUp>().pickUpType)
                     {
                         case SwitchType.EffectBoth: target = RpcTarget.AllBuffered; break;
-                        case SwitchType.EffectOwn: TurnSwitch(); return;
+                        case SwitchType.EffectOwn: PickUpItem(); return;
                         case SwitchType.EffectOther: target = RpcTarget.OthersBuffered; break;
                     }
 
                     // sent
-                    photonView.RPC("TurnSwitch", target);
+                    photonView.RPC("PickUpItem", target);
                 }
             }
         }
     }
 
     [PunRPC]
-    private void TurnSwitch()
+    private void PickUpItem()
     {
-        turningSwitch.Peek().turn();
+        holdingItem = toPickUp;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ITurningSwitch>())
+        if (collision.gameObject.GetComponent<IPickUp>())
         {
-            turningSwitch.Push(collision.gameObject.GetComponent<ITurningSwitch>());
-            Debug.Log(collision + " Added");
+            toPickUp = collision.gameObject;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ITurningSwitch>())
+        if (GameObject.ReferenceEquals(collision.gameObject, toPickUp))
         {
-            turningSwitch.Pop();
-            Debug.Log(collision + " Removed");
+            toPickUp = null;
         }
     }
 
