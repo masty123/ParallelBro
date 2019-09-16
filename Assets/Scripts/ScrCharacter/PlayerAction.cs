@@ -38,4 +38,40 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    public void PickUp(int ID)
+    {
+        IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);
+        if (isOffline)
+        {
+            // logic at here
+            networkRPC.PickUp(interactable.ID);
+            return;
+        }
+
+        switch (interactable.effectType)
+        {
+            case EffectType.EFFECT_BOTH: photonView.RPC("PickUp", RpcTarget.AllBuffered, ID); break;
+            case EffectType.EFFECT_OWN: networkRPC.Interact(interactable.ID); break;
+            case EffectType.EFFECT_OTHER: photonView.RPC("PickUp", RpcTarget.OthersBuffered, ID); break;
+        }
+    }
+
+    public void DropDown(int ID)
+    {
+        IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);
+        if (isOffline)
+        {
+            // logic at here
+            networkRPC.DropDown(interactable.ID);
+            return;
+        }
+
+        switch (interactable.effectType)
+        {
+            case EffectType.EFFECT_BOTH: photonView.RPC("DropDown", RpcTarget.AllBuffered, ID); break;
+            case EffectType.EFFECT_OWN: networkRPC.Interact(interactable.ID); break;
+            case EffectType.EFFECT_OTHER: photonView.RPC("DropDown", RpcTarget.OthersBuffered, ID); break;
+        }
+    }
+
 }

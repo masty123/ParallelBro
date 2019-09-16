@@ -43,5 +43,7 @@ MonoBehaviour:
   - PickUpItem
   - DropItem
   - UseItem
+  - PickUp
+  - DropDown
   DisableAutoOpenWizard: 1
   ShowSettings: 1

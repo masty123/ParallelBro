@@ -18,7 +18,7 @@ public abstract class IInteractable : MonoBehaviourPun
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
-    void Awake()
+    public virtual void Start()
     {
         // assign ID;
         ID = InteractableFactory.Instance.GetID(this);

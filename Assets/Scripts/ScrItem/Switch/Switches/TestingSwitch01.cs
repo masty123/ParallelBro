@@ -7,8 +7,9 @@ public class TestingSwitch01 : ITurningSwitch
 
     Animator anim;
 
-    public void Start()
+    public override void Start()
     {
+        base.Start();
         anim = GetComponent<Animator>();
         if (IsOn)
         {

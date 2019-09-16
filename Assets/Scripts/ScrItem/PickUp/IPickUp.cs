@@ -7,8 +7,9 @@ public abstract class IPickUp : IInteractable
 
     public bool isUsable = false;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         GameObject player = GameObject.FindGameObjectWithTag("player");
         foreach (Collider2D colliders in player.GetComponents<Collider2D>())
         {

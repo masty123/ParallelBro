@@ -10,8 +10,9 @@ public class TestingSwitchPrintto01 : ITurningSwitch
     Animator anim;
     Animator boxAnim;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         anim = GetComponent<Animator>();
         if (IsOn)
         {

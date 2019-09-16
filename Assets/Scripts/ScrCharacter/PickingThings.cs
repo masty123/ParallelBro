@@ -6,8 +6,8 @@ using Photon.Pun;
 public class PickingThings : MonoBehaviour
 {
     private PhotonView photonView;
-    GameObject toPickUp;
-    GameObject holdingItem;
+    public GameObject toPickUp;
+    public GameObject holdingItem;
 
     private void Start()
     {
@@ -16,18 +16,24 @@ public class PickingThings : MonoBehaviour
 
     private void Update()
     {
-        if (photonView != null && !photonView.IsMine)
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             return;
         }
 
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log(holdingItem);
             if (holdingItem == null)
             {
                 if(toPickUp != null)
                 {
-                    PickUpItem();
+                    // get to pick up id
+                    int id = toPickUp.GetComponent<IPickUp>().ID;
+                    // fire action to player
+                    GetComponent<PlayerAction>().PickUp(id);
+
+                    // PickUpItem();
                 }
             }
             else if (holdingItem.GetComponent<IPickUp>().isUsable)
@@ -36,20 +42,20 @@ public class PickingThings : MonoBehaviour
             }
             else
             {
-                DropItem();
+                //DropItem();
+                int id = holdingItem.GetComponent<IPickUp>().ID;
+                GetComponent<PlayerAction>().DropDown(id);
             }
         }
     }
-
-    [PunRPC]
+    
     private void UseItem()
     {
         holdingItem.transform.SetParent(null);
         holdingItem.GetComponent<Rigidbody2D>().isKinematic = false;
         holdingItem.GetComponent<IPickUp>().Interact();
     }
-
-    [PunRPC]
+    
     private void PickUpItem()
     {
         holdingItem = toPickUp;
@@ -58,8 +64,7 @@ public class PickingThings : MonoBehaviour
         holdingItem.transform.localPosition = new Vector3(0, -0.07f, -0.1f);
         holdingItem.GetComponent<IPickUp>().OnPickUp();
     }
-
-    [PunRPC]
+    
     private void DropItem()
     {
         holdingItem.transform.SetParent(null);
