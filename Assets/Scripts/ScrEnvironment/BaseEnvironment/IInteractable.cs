@@ -16,7 +16,7 @@ public abstract class IInteractable : MonoBehaviourPun
     public EffectType effectType = EffectType.EFFECT_BOTH;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         // assign ID;
         ID = InteractableFactory.Instance.GetID();
@@ -32,6 +32,7 @@ public abstract class IInteractable : MonoBehaviourPun
 
     public void NotifyNetwork(PhotonView photonView)
     {
+        Debug.Log(ID);
         if (photonView == null)
         {
             Debug.LogWarning("You have called NotifyNetwork in Offline instance");

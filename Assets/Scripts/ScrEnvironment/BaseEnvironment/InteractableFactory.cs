@@ -15,6 +15,7 @@ public class InteractableFactory : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+        Debug.Log("Started");
         Instance = this;
         storage = new Dictionary<int, IInteractable>();
         lastID = 1000;
@@ -22,6 +23,7 @@ public class InteractableFactory : MonoBehaviour
 
     public int GetID()
     {
+        Debug.Log(lastID);
         return lastID++;
     }
 

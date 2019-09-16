@@ -24,7 +24,7 @@ public class TestingSwitchPrintto01 : ITurningSwitch
         boxAnim = BoxToChangeColor.GetComponent<Animator>();
     }
 
-    public override bool turn()
+    public override void Interact()
     {
         IsOn = true;
         if (IsOn)
@@ -36,6 +36,5 @@ public class TestingSwitchPrintto01 : ITurningSwitch
         {
             //anim.SetTrigger("TurnOff");
         }
-        return IsOn;
     }
 }
