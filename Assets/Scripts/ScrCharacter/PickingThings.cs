@@ -25,32 +25,43 @@ public class PickingThings : MonoBehaviour
         {
             if (holdingItem == null)
             {
-                if (PhotonNetwork.OfflineMode)
+                if(toPickUp != null)
                 {
                     PickUpItem();
                 }
-                else
-                {
-                    // network stuff send this information to who?
-                    RpcTarget target = RpcTarget.AllBuffered;
-                    switch (holdingItem.GetComponent<IPickUp>().pickUpType)
-                    {
-                        case SwitchType.EffectBoth: target = RpcTarget.AllBuffered; break;
-                        case SwitchType.EffectOwn: PickUpItem(); return;
-                        case SwitchType.EffectOther: target = RpcTarget.OthersBuffered; break;
-                    }
-
-                    // sent
-                    photonView.RPC("PickUpItem", target);
-                }
+            }
+            else if (holdingItem.GetComponent<IPickUp>().isUsable)
+            {
+                UseItem();
+            }
+            else
+            {
+                DropItem();
             }
         }
+    }
+
+    [PunRPC]
+    private void UseItem()
+    {
+        holdingItem.GetComponent<IPickUp>().use();
     }
 
     [PunRPC]
     private void PickUpItem()
     {
         holdingItem = toPickUp;
+        holdingItem.GetComponent<Rigidbody2D>().isKinematic = true;
+        holdingItem.transform.SetParent(this.gameObject.transform);
+        holdingItem.transform.localPosition = new Vector3(0, -0.07f, -0.1f);
+    }
+
+    [PunRPC]
+    private void DropItem()
+    {
+        holdingItem.transform.SetParent(null);
+        holdingItem.GetComponent<Rigidbody2D>().isKinematic = false;
+        holdingItem = null;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

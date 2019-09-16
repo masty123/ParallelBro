@@ -10,7 +10,6 @@ using UnityEngine;
 public class TestingPickUpDestroyAtObject : IPickUp
 {
 
-    private bool isUsable = false;
     public GameObject target;
 
     public override bool use()
@@ -40,11 +39,6 @@ public class TestingPickUpDestroyAtObject : IPickUp
         {
             SetUsable(false);
         }
-    }
-
-    public void SetUsable(bool status)
-    {
-        isUsable = status;
     }
 
 }

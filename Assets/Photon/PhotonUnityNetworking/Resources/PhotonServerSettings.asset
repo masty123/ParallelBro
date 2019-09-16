@@ -40,5 +40,8 @@ MonoBehaviour:
   - Interact
   - Interact
   - Interact
+  - PickUpItem
+  - DropItem
+  - UseItem
   DisableAutoOpenWizard: 1
   ShowSettings: 1
