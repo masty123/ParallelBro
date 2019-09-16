@@ -127,12 +127,12 @@ PrefabInstance:
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.204
+      value: 0.612
       objectReference: {fileID: 0}
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.299
+      value: -0.698
       objectReference: {fileID: 0}
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
@@ -367,7 +367,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &278055184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &293619492
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &559211919
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &840928153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &877709299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &1108599591
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1507,7 +1507,7 @@ PrefabInstance:
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.313
+      value: -0.689
       objectReference: {fileID: 0}
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &1446974455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1850,7 +1850,7 @@ PrefabInstance:
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.628
+      value: 0.396
       objectReference: {fileID: 0}
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
@@ -2112,7 +2112,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &1806024790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &1842826714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2436,7 +2436,7 @@ MonoBehaviour:
   ID: 0
   effectType: 0
   isUsable: 0
-  target: {fileID: 0}
+  target: {fileID: 1370803113}
 --- !u!212 &1945158841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2514,7 +2514,7 @@ PrefabInstance:
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.335
+      value: -0.053
       objectReference: {fileID: 0}
     - target: {fileID: 3858273133438687066, guid: d9d70cbbe8962824b8189fe6722a0bb4,
         type: 3}
