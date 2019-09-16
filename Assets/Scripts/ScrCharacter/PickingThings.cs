@@ -44,6 +44,8 @@ public class PickingThings : MonoBehaviour
     [PunRPC]
     private void UseItem()
     {
+        holdingItem.transform.SetParent(null);
+        holdingItem.GetComponent<Rigidbody2D>().isKinematic = false;
         holdingItem.GetComponent<IPickUp>().Interact();
     }
 
