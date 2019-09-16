@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class IPickUp : MonoBehaviour
+public abstract class IPickUp : IInteractable
 {
 
     public bool isUsable = false;
-
-    public abstract bool use();
 
     private void Start()
     {

@@ -12,16 +12,15 @@ public class TestingPickUpDestroyAtObject : IPickUp
 
     public GameObject target;
 
-    public override bool use()
+    public override void Interact()
     {
         if (isUsable)
         {
             Destroy(gameObject);
-            return true;
         }
         else
         {
-            return false;
+
         }
     }
 

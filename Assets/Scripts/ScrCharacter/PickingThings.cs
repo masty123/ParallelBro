@@ -44,7 +44,7 @@ public class PickingThings : MonoBehaviour
     [PunRPC]
     private void UseItem()
     {
-        holdingItem.GetComponent<IPickUp>().use();
+        holdingItem.GetComponent<IPickUp>().Interact();
     }
 
     [PunRPC]
