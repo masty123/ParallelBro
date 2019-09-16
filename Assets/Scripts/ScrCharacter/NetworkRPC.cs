@@ -32,4 +32,13 @@ public class NetworkRPC : MonoBehaviour
         GetComponent<PickingThings>().holdingItem = null;
     }
 
+    [PunRPC]
+    public void UseItem(int ID)
+    {
+        GetComponent<PickingThings>().holdingItem = InteractableFactory.Instance.GetInteractable(ID).gameObject;
+        GetComponent<PickingThings>().holdingItem.transform.SetParent(null);
+        GetComponent<PickingThings>().holdingItem.GetComponent<Rigidbody2D>().isKinematic = false;
+        GetComponent<PickingThings>().holdingItem.GetComponent<IPickUp>().Interact();
+    }
+
 }

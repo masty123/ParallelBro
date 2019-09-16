@@ -38,7 +38,9 @@ public class PickingThings : MonoBehaviour
             }
             else if (holdingItem.GetComponent<IPickUp>().isUsable)
             {
-                UseItem();
+                //UseItem();
+                int id = holdingItem.GetComponent<IPickUp>().ID;
+                GetComponent<PlayerAction>().UseItem(id);
             }
             else
             {
@@ -49,6 +51,7 @@ public class PickingThings : MonoBehaviour
         }
     }
     
+    /*
     private void UseItem()
     {
         holdingItem.transform.SetParent(null);
@@ -72,6 +75,7 @@ public class PickingThings : MonoBehaviour
         holdingItem.GetComponent<IPickUp>().OnDrop();
         holdingItem = null;
     }
+    */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

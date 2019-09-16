@@ -74,4 +74,22 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    public void UseItem(int ID)
+    {
+        IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);
+        if (isOffline)
+        {
+            // logic at here
+            networkRPC.DropDown(interactable.ID);
+            return;
+        }
+
+        switch (interactable.effectType)
+        {
+            case EffectType.EFFECT_BOTH: photonView.RPC("UseItem", RpcTarget.AllBuffered, ID); break;
+            case EffectType.EFFECT_OWN: networkRPC.Interact(interactable.ID); break;
+            case EffectType.EFFECT_OTHER: photonView.RPC("UseItem", RpcTarget.OthersBuffered, ID); break;
+        }
+    }
+
 }
