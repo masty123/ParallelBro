@@ -20,11 +20,6 @@ public class ITurningSwitch : IInteractable
         }
     }
 
-    public override void Start()
-    {
-        base.Start();
-    }
-
     public override void Interact()
     {
         Debug.LogWarning("System is not implemented");

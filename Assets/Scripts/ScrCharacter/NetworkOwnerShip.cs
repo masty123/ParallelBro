@@ -9,16 +9,16 @@ public class NetworkOwnerShip : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        if(!photonView.IsMine)
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             spriteRenderer.color = Color.black;
             Debug.Log("Color Changed");
-        }       
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

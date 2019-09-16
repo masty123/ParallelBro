@@ -21,15 +21,16 @@ public class InteractableFactory : MonoBehaviour
         lastID = 1000;
     }
 
-    public int GetID()
+    public int GetID(IInteractable interactable)
     {
-        Debug.Log(lastID);
-        return lastID++;
+        int id = lastID++;
+        storage.Add(id, interactable);
+        return id;
     }
 
     public IInteractable GetInteractable(int ID)
     {
-        if(storage[ID] == null)
+        if (storage[ID] == null)
         {
             Debug.LogWarning("GetInteractable : " + ID + " could not be found..");
         }

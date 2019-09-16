@@ -16,7 +16,8 @@ public class SwitchTurning : MonoBehaviour
 
     private void Update()
     {
-        if (photonView != null && !photonView.IsMine)
+        // skip other player action
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             return;
         }
@@ -25,16 +26,10 @@ public class SwitchTurning : MonoBehaviour
         {
             if (turningSwitch.Count != 0)
             {
-                turningSwitch.Peek().Interact();
-                turningSwitch.Peek().NotifyNetwork(photonView);
+                int id = turningSwitch.Peek().ID;
+                GetComponent<PlayerAction>().Interact(id);
             }
         }
-    }
-
-    [PunRPC]
-    public void Interact(int ID)
-    {
-        Debug.Log("Player Interact " + ID);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +37,6 @@ public class SwitchTurning : MonoBehaviour
         if (collision.gameObject.GetComponent<ITurningSwitch>())
         {
             turningSwitch.Push(collision.gameObject.GetComponent<ITurningSwitch>());
-            Debug.Log(collision + " Added");
         }
     }
 
@@ -51,7 +45,6 @@ public class SwitchTurning : MonoBehaviour
         if (collision.gameObject.GetComponent<ITurningSwitch>())
         {
             turningSwitch.Pop();
-            Debug.Log(collision + " Removed");
         }
     }
 
