@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SwitchType
+{
+    EffectOwn,
+    EffectBoth,
+    EffectOther
+}
+
 public abstract class ITurningSwitch : MonoBehaviour
 {
-
+    public SwitchType switchType = SwitchType.EffectBoth;
     private bool isOn = false;
 
     public bool IsOn

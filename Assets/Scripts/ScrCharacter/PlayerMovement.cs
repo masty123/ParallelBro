@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviourPun
 
     private void Start()
     {
-        PhotonNetwork.OfflineMode = true;
+        // PhotonNetwork.OfflineMode = true;
     }
 
     // Update is called once per frame
