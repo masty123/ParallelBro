@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4655746258262105380}
   - component: {fileID: 2093500197392636662}
+  - component: {fileID: 3103257300412126714}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomCodeText: {fileID: 0}
   playerPrefab: {fileID: 103, guid: 5f81da6e19bc7ff41a34793284d27d4e, type: 3}
+--- !u!114 &3103257300412126714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853785130396877933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9597856c2faaadc4593dfa99ceb7ff3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

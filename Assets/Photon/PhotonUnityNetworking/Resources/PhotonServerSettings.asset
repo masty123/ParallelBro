@@ -36,5 +36,9 @@ MonoBehaviour:
   - RespawnSpaceship
   - RPCTurnSwitch
   - TurnSwitch
+  - Interact
+  - Interact
+  - Interact
+  - Interact
   DisableAutoOpenWizard: 1
   ShowSettings: 1

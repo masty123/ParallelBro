@@ -7,8 +7,9 @@ public class TestingSwitch01 : ITurningSwitch
 
     Animator anim;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         anim = GetComponent<Animator>();
         if (IsOn)
         {
@@ -20,7 +21,7 @@ public class TestingSwitch01 : ITurningSwitch
         }
     }
 
-    public override bool turn()
+    public override void Interact()
     {
         IsOn = !IsOn;
         if (IsOn)
@@ -33,6 +34,6 @@ public class TestingSwitch01 : ITurningSwitch
             anim.SetTrigger("TurnOff");
             Debug.Log("Switch Off");
         }
-        return IsOn;
     }
+
 }

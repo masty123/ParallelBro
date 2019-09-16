@@ -25,32 +25,16 @@ public class SwitchTurning : MonoBehaviour
         {
             if (turningSwitch.Count != 0)
             {
-                if (PhotonNetwork.OfflineMode)
-                {
-                    TurnSwitch();
-                }
-                else
-                {
-                    // network stuff send this information to who?
-                    RpcTarget target = RpcTarget.AllBuffered;
-                    switch (turningSwitch.Peek().switchType)
-                    {
-                        case SwitchType.EffectBoth: target = RpcTarget.AllBuffered; break;
-                        case SwitchType.EffectOwn: TurnSwitch(); return;
-                        case SwitchType.EffectOther: target = RpcTarget.OthersBuffered; break;
-                    }
-
-                    // sent
-                    photonView.RPC("TurnSwitch", target);
-                }
+                turningSwitch.Peek().Interact();
+                turningSwitch.Peek().NotifyNetwork(photonView);
             }
         }
     }
 
     [PunRPC]
-    private void TurnSwitch()
+    public void Interact(int ID)
     {
-        turningSwitch.Peek().turn();
+        Debug.Log("Player Interact " + ID);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
