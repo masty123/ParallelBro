@@ -18,6 +18,9 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
+    public float smoothSpeed = 0.125f;
+	public Vector3 offset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +28,18 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (player == null)
         {
             return;
         }
         Vector3 playerTransform = player.transform.position;
-        this.transform.position = new Vector3(playerTransform.x, playerTransform.y, this.transform.position.z);
+
+        Vector3 desiredPosition = playerTransform + offset;
+        // VDebug.Instance.Log(desiredPosition.)
+		Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+		transform.position = smoothedPosition;
+		// transform.LookAt(playerTransform);
     }
 }
