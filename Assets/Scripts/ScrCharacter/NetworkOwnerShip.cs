@@ -9,10 +9,17 @@ public class NetworkOwnerShip : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        // is other player
         if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             spriteRenderer.color = Color.black;
             Debug.Log("Color Changed");
+        }
+        // is my own player
+        else
+        {
+            // attach to camera
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().Player = this.gameObject;
         }
     }
 
