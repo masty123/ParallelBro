@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class NetworkOwnerShip : MonoBehaviourPun
 {
+    [Header("Player 1 or Player 2")]
+    public int PlayerIndex = 0;
     public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
