@@ -18,7 +18,7 @@ public class NetworkOwnerShip : MonoBehaviourPun
             Debug.Log("Color Changed");
             gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
             Transform[] children = gameObject.GetComponentsInChildren<Transform>();
-            foreach(Transform child in children)
+            foreach (Transform child in children)
             {
                 child.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
             }
@@ -28,6 +28,12 @@ public class NetworkOwnerShip : MonoBehaviourPun
         {
             // attach to camera
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().Player = this.gameObject;
+        }
+
+        if (PhotonNetwork.IsConnected)
+        {
+            PlayerIndex = PhotonNetwork.CountOfPlayersInRooms + 1;
+            VDebug.Instance.Log(PlayerIndex.ToString());
         }
     }
 

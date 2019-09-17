@@ -27,10 +27,14 @@ public class TestingSwitchPrintto01 : ITurningSwitch
 
     public override void Interact()
     {
+        VDebug.Instance.Log("Interacted");
         IsOn = true;
         if (IsOn)
         {
-            anim.SetTrigger("TurnOn");
+            if (anim)
+            {
+                anim.SetTrigger("TurnOn");
+            }
             boxAnim.SetTrigger("Active");
         }
         else

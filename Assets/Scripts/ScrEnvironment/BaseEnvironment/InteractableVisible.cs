@@ -44,6 +44,7 @@ public class InteractableVisible : MonoBehaviour
         // Debug.Log(player);
         if (player.GetComponent<NetworkOwnerShip>().PlayerIndex != (int)visiblePlayer)
         {
+            VDebug.Instance.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex.ToString());
             disableNonVisible();
         }
     }
