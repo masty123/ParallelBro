@@ -21,7 +21,8 @@ public abstract class IInteractable : MonoBehaviourPun
     public virtual void Start()
     {
         // assign ID;
-        ID = InteractableFactory.Instance.GetID(this);
+        // ID = InteractableFactory.Instance.GetID(this);
+        // VDebug.Instance.Log(this.gameObject.name + " : " + ID);
     }
 
     public abstract void Interact();

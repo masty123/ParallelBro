@@ -49,6 +49,8 @@ public class MenuManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joining");
         PhotonNetwork.LoadLevel("guytestscene");
+        
+        // PhotonNetwork.LoadLevel("interactabletestscene");
     }
 
     #region UIMethods

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class VDebug : MonoBehaviour
 {
     public bool isEnabled = true;
-    Text DebugText;
+    public Text DebugText;
 
     public static VDebug Instance;
 

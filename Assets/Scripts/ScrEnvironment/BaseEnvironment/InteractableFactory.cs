@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InteractableFactory : MonoBehaviour
@@ -19,6 +20,21 @@ public class InteractableFactory : MonoBehaviour
         Instance = this;
         storage = new Dictionary<int, IInteractable>();
         lastID = 1000;
+    }
+
+    public void Start()
+    {
+        // Get all interactable components
+        GameObject[] interactables = GameObject.FindGameObjectsWithTag("interactable");
+        // sort by position
+        interactables = interactables.OrderBy(item => Vector3.Distance(transform.position, item.transform.position)).ToArray();
+        // assign id to tag
+        for (int i = 0; i < interactables.Length; i++)
+        {
+            int ID = GetID(interactables[i].GetComponent<IInteractable>());
+            interactables[i].GetComponent<IInteractable>().ID = ID;
+            VDebug.Instance.Log(i + " = " + interactables[i].gameObject.name + " : " + ID);
+        }
     }
 
     public int GetID(IInteractable interactable)
