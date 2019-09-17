@@ -41,10 +41,14 @@ public class SwitchTurning : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ITurningSwitch>().Equals(turningSwitch))
+        if (collision.gameObject.GetComponent<ITurningSwitch>())
         {
-            turningSwitch = null;
+            if (collision.gameObject.GetComponent<ITurningSwitch>().Equals(turningSwitch))
+            {
+                turningSwitch = null;
+            }
         }
+
     }
 
 }

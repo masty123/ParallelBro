@@ -14,6 +14,7 @@ public class TestingPickUpDestroyAtObject : IPickUp
 
     public override void Interact()
     {
+        Debug.Log("Eating the fruit at the gate");
         if (isUsable)
         {
             Destroy(gameObject);
@@ -28,6 +29,7 @@ public class TestingPickUpDestroyAtObject : IPickUp
     {
         if (GameObject.ReferenceEquals(target, other.gameObject))
         {
+            Debug.Log("The fruit hit the gate");
             SetUsable(true);
         }
     }

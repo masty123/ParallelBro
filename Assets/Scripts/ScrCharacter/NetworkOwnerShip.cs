@@ -14,6 +14,12 @@ public class NetworkOwnerShip : MonoBehaviourPun
         {
             spriteRenderer.color = Color.black;
             Debug.Log("Color Changed");
+            gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
+            Transform[] children = gameObject.GetComponentsInChildren<Transform>();
+            foreach(Transform child in children)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
+            }
         }
         // is my own player
         else
