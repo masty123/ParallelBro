@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 252}
   - component: {fileID: 529}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,10 +95,13 @@ GameObject:
   - component: {fileID: 546}
   - component: {fileID: 505}
   - component: {fileID: 550}
+  - component: {fileID: 554}
+  - component: {fileID: 553}
   - component: {fileID: 551}
-  m_Layer: 0
+  - component: {fileID: 552}
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,7 +255,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4e01020fa06774683765cf2498c36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerIndex: 0
   spriteRenderer: {fileID: 529}
+--- !u!114 &554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4cf6c684e524d18a9b4c45c4903a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4085369ce1ce4445a8cc7d5ef9a6ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +293,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e8163d7780dc442a03e666e89c133f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163fcb8a816b34a48b040347d9cec823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPickUp: {fileID: 0}
+  holdingItem: {fileID: 0}
 --- !u!1001 &2287233427674928991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,6 +318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319542829138660177, guid: 4d621a0c8153a0648acfbfb93754c563,
+        type: 3}
+      propertyPath: m_TagString
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 3048389760776920729, guid: 4d621a0c8153a0648acfbfb93754c563,
         type: 3}
@@ -331,6 +378,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3363632193093596164, guid: 4d621a0c8153a0648acfbfb93754c563,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071617942677517676, guid: 4d621a0c8153a0648acfbfb93754c563,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 970390206527808345, guid: 4d621a0c8153a0648acfbfb93754c563,
         type: 3}

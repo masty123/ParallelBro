@@ -7,16 +7,22 @@ using Photon.Pun;
 public class GameManager : MonoBehaviour
 {
     public Text RoomCodeText;
-    
+
     public GameObject playerPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PhotonNetwork.CurrentRoom.Name);
-        RoomCodeText.text = PhotonNetwork.CurrentRoom.Name;
-        foreach(var player in PhotonNetwork.PlayerList)
+        if (!PhotonNetwork.IsConnected)
         {
-            Debug.Log(player.NickName);
+            RoomCodeText.text = "Offline Mode";
+        }
+        else
+        {
+            RoomCodeText.text = PhotonNetwork.CurrentRoom.Name;
+            foreach (var player in PhotonNetwork.PlayerList)
+            {
+                Debug.Log(player.NickName);
+            }
         }
 
     }

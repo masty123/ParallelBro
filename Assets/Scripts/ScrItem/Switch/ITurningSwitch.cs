@@ -2,16 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SwitchType
-{
-    EffectOwn,
-    EffectBoth,
-    EffectOther
-}
 
-public abstract class ITurningSwitch : MonoBehaviour
+public class ITurningSwitch : IInteractable
 {
-    public SwitchType switchType = SwitchType.EffectBoth;
     private bool isOn = false;
 
     public bool IsOn
@@ -27,6 +20,8 @@ public abstract class ITurningSwitch : MonoBehaviour
         }
     }
 
-    public abstract bool turn();
-
+    public override void Interact()
+    {
+        Debug.LogWarning("System is not implemented");
+    }
 }

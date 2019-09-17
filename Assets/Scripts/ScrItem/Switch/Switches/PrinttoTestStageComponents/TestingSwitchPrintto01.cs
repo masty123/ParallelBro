@@ -10,8 +10,9 @@ public class TestingSwitchPrintto01 : ITurningSwitch
     Animator anim;
     Animator boxAnim;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         anim = GetComponent<Animator>();
         if (IsOn)
         {
@@ -24,18 +25,21 @@ public class TestingSwitchPrintto01 : ITurningSwitch
         boxAnim = BoxToChangeColor.GetComponent<Animator>();
     }
 
-    public override bool turn()
+    public override void Interact()
     {
+        VDebug.Instance.Log("Interacted");
         IsOn = true;
         if (IsOn)
         {
-            anim.SetTrigger("TurnOn");
+            if (anim)
+            {
+                anim.SetTrigger("TurnOn");
+            }
             boxAnim.SetTrigger("Active");
         }
         else
         {
             //anim.SetTrigger("TurnOff");
         }
-        return IsOn;
     }
 }

@@ -48,7 +48,9 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joining");
-        PhotonNetwork.LoadLevel("guytestscene");
+        // PhotonNetwork.LoadLevel("guytestscene");
+        
+        PhotonNetwork.LoadLevel("interactabletestscene");
     }
 
     #region UIMethods
