@@ -9,6 +9,7 @@ TagManager:
   - tiles
   - player
   - Switch
+  - interactable
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Background
   - Player
   - Tiles
-  - Diff layer
+  - Interactable
   - 
   - 
   - 
