@@ -80,7 +80,7 @@ public class PlayerAction : MonoBehaviour
         if (isOffline)
         {
             // logic at here
-            networkRPC.DropDown(interactable.ID);
+            networkRPC.UseItem(interactable.ID);
             return;
         }
 

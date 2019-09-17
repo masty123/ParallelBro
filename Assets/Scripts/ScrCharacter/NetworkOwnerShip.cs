@@ -20,6 +20,7 @@ public class NetworkOwnerShip : MonoBehaviourPun
             Transform[] children = gameObject.GetComponentsInChildren<Transform>();
             foreach (Transform child in children)
             {
+                child.gameObject.tag = "player";
                 child.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
             }
         }
