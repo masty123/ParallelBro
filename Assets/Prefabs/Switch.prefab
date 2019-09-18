@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3858273133438687064}
   m_Layer: 11
   m_Name: Switch
-  m_TagString: Switch
+  m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,4 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3bf590192d342e4da68b214842261ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+  effectType: 0
   BoxToChangeColor: {fileID: 0}

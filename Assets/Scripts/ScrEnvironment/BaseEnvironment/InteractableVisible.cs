@@ -54,5 +54,7 @@ public class InteractableVisible : MonoBehaviour
         Debug.Log("Disabled : " + this.gameObject.name);
         Destroy(gameObject.GetComponent<Animator>());
         this.GetComponent<SpriteRenderer>().color = Color.black;
+        Destroy(gameObject.GetComponent<Collider2D>());
+        Destroy(gameObject.GetComponent<Rigidbody2D>());
     }
 }
