@@ -12,6 +12,10 @@ public enum VisiblePlayer
 
 public class InteractableVisible : MonoBehaviour
 {
+    public bool hideRenderer = true;
+    public bool hideRigidbody = true;
+    public bool hideAnimator = true;
+    public bool hideCollider = true;
     public VisiblePlayer visiblePlayer = VisiblePlayer.BOTH_PLAYER;
     private bool isOffline = true;
     private GameObject player;
@@ -25,6 +29,7 @@ public class InteractableVisible : MonoBehaviour
         {
             foreach (var player in players)
             {
+                Debug.Log(player.name);
                 if (player.GetComponent<PhotonView>().IsMine)
                 {
                     // my player
@@ -52,9 +57,28 @@ public class InteractableVisible : MonoBehaviour
     private void disableNonVisible()
     {
         Debug.Log("Disabled : " + this.gameObject.name);
-        Destroy(gameObject.GetComponent<Animator>());
-        this.GetComponent<SpriteRenderer>().color = Color.black;
-        Destroy(gameObject.GetComponent<Collider2D>());
-        Destroy(gameObject.GetComponent<Rigidbody2D>());
+        if (hideRenderer)
+        {
+            this.GetComponent<SpriteRenderer>().color = Color.black;
+        }
+
+        if (hideCollider)
+        {
+            this.GetComponent<Collider2D>().enabled = false;
+        }
+
+        if (hideAnimator)
+        {
+            this.GetComponent<Animator>().enabled = false;
+        }
+
+        if (hideRigidbody)
+        {
+            this.GetComponent<Rigidbody2D>().simulated = false;
+        }
+        // Destroy(gameObject.GetComponent<Animator>());
+        // this.GetComponent<SpriteRenderer>().color = Color.black;
+        // Destroy(gameObject.GetComponent<Collider2D>());
+        // Destroy(gameObject.GetComponent<Rigidbody2D>());
     }
 }
