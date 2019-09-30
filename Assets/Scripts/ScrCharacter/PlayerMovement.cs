@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviourPun
     {
         // PhotonNetwork.OfflineMode = true;
         controllerListener = GameObject.Find("ControllerListener").GetComponent<JoystickManager>();
-        Debug.Log(controllerListener);
     }
 
     // Update is called once per frame

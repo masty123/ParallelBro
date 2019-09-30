@@ -8,9 +8,12 @@ public class SwitchTurning : MonoBehaviour
     private PhotonView photonView;
     ITurningSwitch turningSwitch = null;
 
+    JoystickManager controllerListener;
+
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+        controllerListener = GameObject.Find("ControllerListener").GetComponent<JoystickManager>();
     }
 
     private void Update()
@@ -21,7 +24,7 @@ public class SwitchTurning : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Interact"))
         {
             if (turningSwitch != null)
             {
@@ -29,6 +32,19 @@ public class SwitchTurning : MonoBehaviour
                 GetComponent<PlayerAction>().Interact(id);
             }
         }
+
+        if (controllerListener != null)
+        {
+            if (controllerListener.GetInteractDown())
+            {
+                if (turningSwitch != null)
+                {
+                    int id = turningSwitch.ID;
+                    GetComponent<PlayerAction>().Interact(id);
+                }
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
