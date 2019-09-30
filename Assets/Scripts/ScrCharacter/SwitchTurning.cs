@@ -6,7 +6,7 @@ using Photon.Pun;
 public class SwitchTurning : MonoBehaviour
 {
     private PhotonView photonView;
-    ITurningSwitch turningSwitch = null;
+    Switch turningSwitch = null;
 
     JoystickManager controllerListener;
 
@@ -49,17 +49,17 @@ public class SwitchTurning : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ITurningSwitch>())
+        if (collision.gameObject.GetComponent<Switch>())
         {
-            turningSwitch = collision.gameObject.GetComponent<ITurningSwitch>();
+            turningSwitch = collision.gameObject.GetComponent<Switch>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ITurningSwitch>())
+        if (collision.gameObject.GetComponent<Switch>())
         {
-            if (collision.gameObject.GetComponent<ITurningSwitch>().Equals(turningSwitch))
+            if (collision.gameObject.GetComponent<Switch>().Equals(turningSwitch))
             {
                 turningSwitch = null;
             }
