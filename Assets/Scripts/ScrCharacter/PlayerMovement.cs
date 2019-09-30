@@ -48,6 +48,8 @@ public class PlayerMovement : MonoBehaviourPun
                 horizontalMove = controllerListener.GetHorizontalRaw() * runSpeed;
             }
             /*
+             * Moved to FixedUpdate
+             * 
             if ( controllerListener.GetJumpDown())
             {
                 jump = true;
@@ -65,6 +67,7 @@ public class PlayerMovement : MonoBehaviourPun
             return;
         }
 
+        #region On-screen jumping
         //Onscreen input
         if (controllerListener != null)
         {
@@ -73,6 +76,7 @@ public class PlayerMovement : MonoBehaviourPun
                 jump = true;
             }
         }
+        #endregion
 
         //Move player
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
