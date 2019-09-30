@@ -12,6 +12,7 @@ public enum EffectType
 
 public abstract class IInteractable : MonoBehaviourPun
 {
+    [HideInInspector]
     public int ID;
     public EffectType effectType = EffectType.EFFECT_BOTH;
 

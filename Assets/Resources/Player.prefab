@@ -448,11 +448,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4947976672622627894, guid: 4d621a0c8153a0648acfbfb93754c563,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.81
-      objectReference: {fileID: 0}
     - target: {fileID: 3363632193093596164, guid: 4d621a0c8153a0648acfbfb93754c563,
         type: 3}
       propertyPath: m_TagString
@@ -463,17 +458,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 970390206527808345, guid: 4d621a0c8153a0648acfbfb93754c563,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947976672622627894, guid: 4d621a0c8153a0648acfbfb93754c563,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -29.81
+      objectReference: {fileID: 0}
     - target: {fileID: 8178675923606130889, guid: 4d621a0c8153a0648acfbfb93754c563,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f2f1261272508c241a1f043402a9ed5f,
         type: 3}
-    - target: {fileID: 970390206527808345, guid: 4d621a0c8153a0648acfbfb93754c563,
-        type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6769968879034577122, guid: 4d621a0c8153a0648acfbfb93754c563, type: 3}
     - {fileID: 970390206527808345, guid: 4d621a0c8153a0648acfbfb93754c563, type: 3}
