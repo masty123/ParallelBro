@@ -96,6 +96,11 @@ public class JoystickManager : MonoBehaviour
         return jumpDown;
     }
 
+    public bool GetInteractDown()
+    {
+        return interactDown;
+    }
+
     #endregion
 
 }

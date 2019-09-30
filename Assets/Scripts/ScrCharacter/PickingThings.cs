@@ -9,9 +9,12 @@ public class PickingThings : MonoBehaviour
     public GameObject toPickUp;
     public GameObject holdingItem;
 
+    JoystickManager controllerListener;
+
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+        controllerListener = GameObject.Find("ControllerListener").GetComponent<JoystickManager>();
     }
 
     private void Update()
@@ -21,7 +24,8 @@ public class PickingThings : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        #region Keyboard inputs
+        if (Input.GetButtonDown("Interact"))
         {
             Debug.Log(holdingItem);
             if (holdingItem == null)
@@ -49,8 +53,44 @@ public class PickingThings : MonoBehaviour
                 GetComponent<PlayerAction>().DropDown(id);
             }
         }
+        #endregion
+
+        #region On-screen inputs
+        if(controllerListener != null)
+        {
+            if (controllerListener.GetInteractDown())
+            {
+                Debug.Log(holdingItem);
+                if (holdingItem == null)
+                {
+                    if (toPickUp != null)
+                    {
+                        // get to pick up id
+                        int id = toPickUp.GetComponent<IPickUp>().ID;
+                        // fire action to player
+                        GetComponent<PlayerAction>().PickUp(id);
+
+                        // PickUpItem();
+                    }
+                }
+                else if (holdingItem.GetComponent<IPickUp>().isUsable)
+                {
+                    //UseItem();
+                    int id = holdingItem.GetComponent<IPickUp>().ID;
+                    GetComponent<PlayerAction>().UseItem(id);
+                }
+                else
+                {
+                    //DropItem();
+                    int id = holdingItem.GetComponent<IPickUp>().ID;
+                    GetComponent<PlayerAction>().DropDown(id);
+                }
+            }
+        }
+        #endregion
+
     }
-    
+
     /*
     private void UseItem()
     {
