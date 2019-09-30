@@ -30,22 +30,30 @@ public class PlayerMovement : MonoBehaviourPun
             return;
         }
 
+        #region Keyboard inputs
         //keyboard input
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-        //Onscreen input
-        if(controllerListener != null)
-        {
-            if(Input.GetAxisRaw("Horizontal") == 0)
-            {
-                horizontalMove = controllerListener.GetHorizontalRaw() * runSpeed;
-            }
-        }
-
+        
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
+        #endregion
+
+        #region On-screen inputs
+        //Onscreen input
+        if (controllerListener != null)
+        {
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                horizontalMove = controllerListener.GetHorizontalRaw() * runSpeed;
+            }
+            if ( controllerListener.GetJumpDown())
+            {
+                jump = true;
+            }
+        }
+        #endregion
 
     }
 

@@ -4,39 +4,98 @@ using UnityEngine;
 
 public class JoystickManager : MonoBehaviour
 {
-    
+
+    #region variables
+
+    private int leftInput = 0;
+    private int rightInput = 0;
     private float horizontalRaw = 0;
-    private int leftPress = 0;
-    private int rightPress = 0;
+    
+    private bool jumpDown = false;
+
+    public bool interactDown = false;
+
+    #endregion
+
+    #region updating
 
     private void Update()
     {
-        horizontalRaw = rightPress - leftPress;
+        horizontalRaw = rightInput - leftInput;
+    }
+
+    #endregion
+
+    #region up and down
+
+    public void DownJump()
+    {
+        if (!jumpDown)
+        {
+            jumpDown = true;
+            StartCoroutine(ReleaseJump());
+        }
+    }
+
+    public void DownInteract()
+    {
+        if (!interactDown)
+        {
+            interactDown = true;
+            StartCoroutine(ReleaseInteract());
+        }
     }
 
     public void DownLeft()
     {
-        leftPress = 1;
+        leftInput = 1;
     }
 
     public void UpLeft()
     {
-        leftPress = 0;
+        leftInput = 0;
     }
 
     public void DownRight()
     {
-        rightPress = 1;
+        rightInput = 1;
     }
 
     public void UpRight()
     {
-        rightPress = 0;
+        rightInput = 0;
     }
+
+    #endregion
+
+    #region utility
+
+    IEnumerator ReleaseJump()
+    {
+        yield return null; //wait 1 frame
+        jumpDown = false;
+    }
+
+    IEnumerator ReleaseInteract()
+    {
+        yield return null; //wait 1 frame
+        interactDown = false;
+    }
+
+    #endregion
+
+    #region Getter and Setter
 
     public float GetHorizontalRaw()
     {
         return horizontalRaw;
     }
-    
+
+    public bool GetJumpDown()
+    {
+        return jumpDown;
+    }
+
+    #endregion
+
 }
