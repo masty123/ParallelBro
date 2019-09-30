@@ -14,6 +14,8 @@ public class NetworkOwnerShip : MonoBehaviourPun
         // is other player
         if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
+            // determine the layer
+            spriteRenderer.sortingOrder  = -10;
             spriteRenderer.color = Color.black;
             Debug.Log("Color Changed");
             gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
