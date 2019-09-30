@@ -13,9 +13,13 @@ public class PlayerMovement : MonoBehaviourPun
 
     bool jump = false;
 
+    private JoystickManager controllerListener;
+
     private void Start()
     {
         // PhotonNetwork.OfflineMode = true;
+        controllerListener = GameObject.Find("ControllerListener").GetComponent<JoystickManager>();
+        Debug.Log(controllerListener);
     }
 
     // Update is called once per frame
@@ -25,7 +29,18 @@ public class PlayerMovement : MonoBehaviourPun
         {
             return;
         }
+
+        //keyboard input
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        //Onscreen input
+        if(controllerListener != null)
+        {
+            if(Input.GetAxisRaw("Horizontal") == 0)
+            {
+                horizontalMove = controllerListener.GetHorizontalRaw() * runSpeed;
+            }
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
