@@ -73,13 +73,13 @@ public class JoystickManager : MonoBehaviour
     IEnumerator ReleaseJump()
     {
         yield return null; //wait 1 frame
-        jumpDown = false;
+        //jumpDown = false;
     }
 
     IEnumerator ReleaseInteract()
     {
         yield return null; //wait 1 frame
-        interactDown = false;
+        //interactDown = false;
     }
 
     #endregion
@@ -93,12 +93,16 @@ public class JoystickManager : MonoBehaviour
 
     public bool GetJumpDown()
     {
-        return jumpDown;
+        bool temp = jumpDown;
+        jumpDown = false;
+        return temp;
     }
 
     public bool GetInteractDown()
     {
-        return interactDown;
+        bool temp = interactDown;
+        interactDown = false;
+        return temp;
     }
 
     #endregion
