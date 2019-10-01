@@ -3,7 +3,6 @@ using Photon.Pun;
 
 public class NetworkRPC : MonoBehaviour
 {
-
     [PunRPC]
     public void Interact(int ID)
     {
@@ -38,4 +37,19 @@ public class NetworkRPC : MonoBehaviour
         GetComponent<PickingThings>().holdingItem.GetComponent<IPickUp>().Interact();
     }
 
+    [PunRPC]
+    public void ChangeOwnership(int ID)
+    {
+        IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);
+        InteractableVisible visible = interactable.GetComponent<InteractableVisible>();
+        if (visible.visiblePlayer == VisiblePlayer.PLAYER_1)
+        {
+            visible.visiblePlayer = VisiblePlayer.PLAYER_2;
+        }
+        else if (visible.visiblePlayer == VisiblePlayer.PLAYER_2)
+        {
+            visible.visiblePlayer = VisiblePlayer.PLAYER_1;
+        }
+        visible.recheckVisible();
+    }
 }

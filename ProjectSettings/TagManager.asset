@@ -10,6 +10,7 @@ TagManager:
   - player
   - Switch
   - interactable
+  - transfer
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0

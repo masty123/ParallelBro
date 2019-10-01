@@ -12,6 +12,7 @@ public enum VisiblePlayer
 
 public class InteractableVisible : MonoBehaviour
 {
+    private Color defaultColor;
     public bool hideRenderer = true;
     public bool hideRigidbody = true;
     public bool hideAnimator = true;
@@ -22,6 +23,7 @@ public class InteractableVisible : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultColor = GetComponent<SpriteRenderer>().color;
         isOffline = !PhotonNetwork.IsConnected;
         GameObject[] players = GameObject.FindGameObjectsWithTag("player");
         // which one is current player;
@@ -47,8 +49,13 @@ public class InteractableVisible : MonoBehaviour
             return;
         }
         // Debug.Log(player);
+        Debug.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex);
+        Debug.Log(visiblePlayer);
+
+        Debug.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex != (int)visiblePlayer);
         if (player.GetComponent<NetworkOwnerShip>().PlayerIndex != (int)visiblePlayer)
         {
+            Debug.Log("Disabled");
             VDebug.Instance.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex.ToString());
             disableNonVisible();
         }
@@ -64,7 +71,10 @@ public class InteractableVisible : MonoBehaviour
 
         if (hideCollider)
         {
-            this.GetComponent<Collider2D>().enabled = false;
+            foreach (Collider2D colliers in this.GetComponents<Collider2D>())
+            {
+                colliers.enabled = false;
+            }
         }
 
         if (hideAnimator)
@@ -80,5 +90,34 @@ public class InteractableVisible : MonoBehaviour
         // this.GetComponent<SpriteRenderer>().color = Color.black;
         // Destroy(gameObject.GetComponent<Collider2D>());
         // Destroy(gameObject.GetComponent<Rigidbody2D>());
+    }
+
+    public void recheckVisible()
+    {
+        Debug.Log("Rechecked");
+        if (hideRenderer)
+        {
+            this.GetComponent<SpriteRenderer>().color = defaultColor;
+        }
+
+        if (hideCollider)
+        {
+            foreach (Collider2D colliers in this.GetComponents<Collider2D>())
+            {
+                colliers.enabled = true;
+            }
+        }
+
+        if (hideAnimator)
+        {
+            this.GetComponent<Animator>().enabled = true;
+        }
+
+        if (hideRigidbody)
+        {
+            this.GetComponent<Rigidbody2D>().simulated = true;
+        }
+
+        Start();
     }
 }

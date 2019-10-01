@@ -17,7 +17,9 @@ public class TestingPickUpDestroyAtObject : IPickUp
         Debug.Log("Eating the fruit at the gate");
         if (isUsable)
         {
-            Destroy(gameObject);
+            // use item at gate
+
+            // Destroy(gameObject);
         }
         else
         {

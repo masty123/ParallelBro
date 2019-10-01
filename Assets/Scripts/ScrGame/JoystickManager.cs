@@ -14,6 +14,7 @@ public class JoystickManager : MonoBehaviour
     private bool jumpDown = false;
 
     public bool interactDown = false;
+    public bool pickUpDown = false;
 
     #endregion
 
@@ -42,6 +43,7 @@ public class JoystickManager : MonoBehaviour
         if (!interactDown)
         {
             interactDown = true;
+            pickUpDown = true;
             StartCoroutine(ReleaseInteract());
         }
     }
@@ -102,6 +104,13 @@ public class JoystickManager : MonoBehaviour
     {
         bool temp = interactDown;
         interactDown = false;
+        return temp;
+    }
+
+    public bool GetPickUpDown()
+    {
+        bool temp = pickUpDown;
+        pickUpDown = false;
         return temp;
     }
 
