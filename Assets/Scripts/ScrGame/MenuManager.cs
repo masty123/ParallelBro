@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public GameObject LevelScreen;
     public GameObject CharacterScreen;
     public GameObject JoinScreen;
+    public GameObject titleText;
     public Text UserNameText;
     public InputField RoomCodeText;
 
@@ -49,7 +50,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     // Handle Login Screen
     public void OnClickLoginButton()
     {
-        handleFacebookLogin();
+        StartCoroutine(WaitForAnimationLogin());
     }
 
     private void handleFacebookLogin()
@@ -87,8 +88,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public void OnClickCreateRoom()
     {
-        LobbyScreen.SetActive(false);
-        LevelScreen.SetActive(true);
+        StartCoroutine(WaitForAnimationCreateButton());
     }
 
     public void OnClickJoinRoom()
@@ -108,15 +108,14 @@ public class MenuManager : MonoBehaviourPunCallbacks
     // Handle Level Screen
     public void OnClickLevel(int level)
     {
-        roomData = new RoomData(level);
-        LevelScreen.SetActive(false);
-        CharacterScreen.SetActive(true);
+       
+        StartCoroutine( WaitForAnimationOnClickLevel(level));
+    
     }
 
     public void OnClickBackLevel()
     {
-        LevelScreen.SetActive(false);
-        LobbyScreen.SetActive(true);
+        StartCoroutine(WaitForAnimationOnClickLevelBack());
     }
     #endregion
 
@@ -133,9 +132,8 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public void OnClickBackCharacter()
     {
-        roomData = null;
-        CharacterScreen.SetActive(false);
-        LevelScreen.SetActive(true);
+       StartCoroutine(WaitForAnimationBackCharacter());
+    
     }
     #endregion
 
@@ -189,6 +187,61 @@ public class MenuManager : MonoBehaviourPunCallbacks
     {
         return names[Random.Range(0, names.Length)];
     }
+
+
+    IEnumerator WaitForAnimationLogin()
+    {
+        yield return new WaitForSeconds(1f);
+        handleFacebookLogin();
+    }
+
+    IEnumerator WaitForAnimationCreateButton()
+    {
+        yield return new WaitForSeconds(1.2f);
+        LobbyScreen.SetActive(false);
+        LevelScreen.SetActive(true);
+        titleText.SetActive(false);
+
+    }
+
+    IEnumerator WaitForAnimationSettingButton()
+    {
+        yield return new WaitForSeconds(1.2f);
+        OnClickSetting();
+
+    }
+
+    IEnumerator WaitForAnimationBackButton()
+    {
+        yield return new WaitForSeconds(1.2f);
+    }
+
+    IEnumerator WaitForAnimationBackCharacter()
+    {
+        yield return new WaitForSeconds(1f);
+        roomData = null;
+        CharacterScreen.SetActive(false);
+        LevelScreen.SetActive(true);
+    }
+
+
+    IEnumerator WaitForAnimationOnClickLevel(int level)
+    {
+        yield return new WaitForSeconds(1f);
+        roomData = new RoomData(level);
+        LevelScreen.SetActive(false);
+        CharacterScreen.SetActive(true);
+    }
+
+    IEnumerator WaitForAnimationOnClickLevelBack()
+    {
+        yield return new WaitForSeconds(.8f);
+        LevelScreen.SetActive(false);
+        LobbyScreen.SetActive(true);
+    }
+
+
+
 
 }
 
