@@ -58,7 +58,7 @@ public class PickingThings : MonoBehaviour
         #region On-screen inputs
         if(controllerListener != null)
         {
-            if (controllerListener.GetInteractDown())
+            if (controllerListener.GetPickUpDown())
             {
                 Debug.Log(holdingItem);
                 if (holdingItem == null)
