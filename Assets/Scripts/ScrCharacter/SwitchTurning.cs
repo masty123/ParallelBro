@@ -9,11 +9,13 @@ public class SwitchTurning : MonoBehaviour
     Switch turningSwitch = null;
 
     JoystickManager controllerListener;
+    PickingThings pickingThings;
 
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
         controllerListener = GameObject.Find("ControllerListener").GetComponent<JoystickManager>();
+        pickingThings = GetComponent<PickingThings>();
     }
 
     private void Update()
@@ -26,25 +28,25 @@ public class SwitchTurning : MonoBehaviour
 
         if (Input.GetButtonDown("Interact"))
         {
-            if (turningSwitch != null)
-            {
-                int id = turningSwitch.ID;
-                GetComponent<PlayerAction>().Interact(id);
-            }
+            turnItOn();
         }
 
         if (controllerListener != null)
         {
             if (controllerListener.GetInteractDown())
             {
-                if (turningSwitch != null)
-                {
-                    int id = turningSwitch.ID;
-                    GetComponent<PlayerAction>().Interact(id);
-                }
+                turnItOn();
             }
         }
+    }
 
+    private void turnItOn()
+    {
+        if (turningSwitch != null && pickingThings.holdingItem == null && pickingThings.toPickUp == null)
+        {
+            int id = turningSwitch.ID;
+            GetComponent<PlayerAction>().Interact(id);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
