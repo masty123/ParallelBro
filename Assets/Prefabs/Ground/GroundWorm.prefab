@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3813407121016694531}
   - component: {fileID: 3813407121016694530}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3813407121089006904}
   - component: {fileID: 3813407121089006907}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 3813407121408501759}
   - component: {fileID: 2132917891}
   - component: {fileID: 2132917890}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: GroundWorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3813407121539766043}
   - component: {fileID: 3813407121539766042}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3813407122199124443}
   - component: {fileID: 3813407122199124442}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

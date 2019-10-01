@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505702902949995452}
   - component: {fileID: 8505702902949995453}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505702903326528700}
   - component: {fileID: 8505702903326528701}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505702903916627093}
   - component: {fileID: 8505702903916627098}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505702904342864392}
   - component: {fileID: 8505702904342864393}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505702904503880232}
   - component: {fileID: 5586468880479608867}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
