@@ -968,7 +968,7 @@ PrefabInstance:
     - target: {fileID: 8078094033788645417, guid: 5bbbfdb5d28af714787d24dffaae970f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8078094033788645417, guid: 5bbbfdb5d28af714787d24dffaae970f,
         type: 3}
@@ -1020,14 +1020,39 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1221182077}
-    - target: {fileID: 8078094033788645418, guid: 5bbbfdb5d28af714787d24dffaae970f,
+    - target: {fileID: 5231271237884149359, guid: 5bbbfdb5d28af714787d24dffaae970f,
         type: 3}
-      propertyPath: m_Transition
-      value: 3
+      propertyPath: m_AnchoredPosition.y
+      value: -5.1
       objectReference: {fileID: 0}
-    - target: {fileID: 8078094033788645418, guid: 5bbbfdb5d28af714787d24dffaae970f,
+    - target: {fileID: 5231271237884149359, guid: 5bbbfdb5d28af714787d24dffaae970f,
         type: 3}
-      propertyPath: m_Interactable
+      propertyPath: m_LocalScale.x
+      value: 0.19990863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231271237884149359, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14230262
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231271237884149359, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.128267
+      objectReference: {fileID: 0}
+    - target: {fileID: 779295695125336205, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: e90094f861f52124b8649db06aedbbcf, type: 2}
+    - target: {fileID: 964711472220891523, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 922042bde270fe148be1e2637de8a5e0, type: 2}
+    - target: {fileID: 964711472220891523, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: fixedTime
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
