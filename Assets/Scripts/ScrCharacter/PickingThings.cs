@@ -27,31 +27,7 @@ public class PickingThings : MonoBehaviour
         #region Keyboard inputs
         if (Input.GetButtonDown("Interact"))
         {
-            Debug.Log(holdingItem);
-            if (holdingItem == null)
-            {
-                if(toPickUp != null)
-                {
-                    // get to pick up id
-                    int id = toPickUp.GetComponent<IPickUp>().ID;
-                    // fire action to player
-                    GetComponent<PlayerAction>().PickUp(id);
-
-                    // PickUpItem();
-                }
-            }
-            else if (holdingItem.GetComponent<IPickUp>().isUsable)
-            {
-                //UseItem();
-                int id = holdingItem.GetComponent<IPickUp>().ID;
-                GetComponent<PlayerAction>().UseItem(id);
-            }
-            else
-            {
-                //DropItem();
-                int id = holdingItem.GetComponent<IPickUp>().ID;
-                GetComponent<PlayerAction>().DropDown(id);
-            }
+            pickItUp();
         }
         #endregion
 
@@ -60,35 +36,42 @@ public class PickingThings : MonoBehaviour
         {
             if (controllerListener.GetPickUpDown())
             {
-                Debug.Log(holdingItem);
-                if (holdingItem == null)
-                {
-                    if (toPickUp != null)
-                    {
-                        // get to pick up id
-                        int id = toPickUp.GetComponent<IPickUp>().ID;
-                        // fire action to player
-                        GetComponent<PlayerAction>().PickUp(id);
-
-                        // PickUpItem();
-                    }
-                }
-                else if (holdingItem.GetComponent<IPickUp>().isUsable)
-                {
-                    //UseItem();
-                    int id = holdingItem.GetComponent<IPickUp>().ID;
-                    GetComponent<PlayerAction>().UseItem(id);
-                }
-                else
-                {
-                    //DropItem();
-                    int id = holdingItem.GetComponent<IPickUp>().ID;
-                    GetComponent<PlayerAction>().DropDown(id);
-                }
+                pickItUp();
             }
         }
         #endregion
 
+    }
+
+    private void pickItUp()
+    {
+        Debug.Log(holdingItem);
+        if (holdingItem == null)
+        {
+            if (toPickUp != null)
+            {
+                if(toPickUp.transform.parent == null)
+                {
+                    // get to pick up id
+                    int id = toPickUp.GetComponent<IPickUp>().ID;
+                    // fire action to player
+                    GetComponent<PlayerAction>().PickUp(id);
+                    // PickUpItem();
+                }
+            }
+        }
+        else if (holdingItem.GetComponent<IPickUp>().isUsable)
+        {
+            //UseItem();
+            int id = holdingItem.GetComponent<IPickUp>().ID;
+            GetComponent<PlayerAction>().UseItem(id);
+        }
+        else
+        {
+            //DropItem();
+            int id = holdingItem.GetComponent<IPickUp>().ID;
+            GetComponent<PlayerAction>().DropDown(id);
+        }
     }
 
     /*
