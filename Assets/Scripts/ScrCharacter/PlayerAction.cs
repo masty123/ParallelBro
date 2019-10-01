@@ -92,4 +92,20 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    public void ChangeOwnership(int ID)
+    {
+        IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);
+        if(isOffline)
+        {
+            networkRPC.ChangeOwnership(interactable.ID);
+            return;
+        }
+
+        switch (interactable.effectType)
+        {
+            case EffectType.EFFECT_BOTH: photonView.RPC("ChangeOwnership", RpcTarget.AllBuffered, ID); break;
+            case EffectType.EFFECT_OWN: networkRPC.Interact(interactable.ID); break;
+            case EffectType.EFFECT_OTHER: photonView.RPC("ChangeOwnership", RpcTarget.OthersBuffered, ID); break;
+        }
+    }
 }

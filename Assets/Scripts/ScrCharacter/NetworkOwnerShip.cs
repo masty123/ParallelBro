@@ -13,17 +13,28 @@ public class NetworkOwnerShip : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        PlayerIndex = UserData.GetInstance().GetCharacterIndex();
+        // detemine player index
+        // if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
+        // {
+        //     //Get other player index
+
+
+        // }
+        // else
+        // {
+        PlayerIndex = UserData.GetInstance().GetCharacterIndex() == 1 ? 1 : 2;
+        // }
+
         // is other player
         if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
             gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
-            Transform[] children = gameObject.GetComponentsInChildren<Transform>();
-            foreach (Transform child in children)
-            {
-                child.gameObject.tag = "player";
-                child.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
-            }
+            // Transform[] children = gameObject.GetComponentsInChildren<Transform>();
+            // foreach (Transform child in children)
+            // {
+            //     child.gameObject.tag = "player";
+            //     child.gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
+            // }
 
             if (PlayerIndex == 1)
             {
