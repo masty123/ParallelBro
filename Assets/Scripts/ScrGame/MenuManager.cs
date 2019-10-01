@@ -43,6 +43,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
         // connect to server
         PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     #region Login

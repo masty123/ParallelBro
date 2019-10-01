@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomCodeText: {fileID: 0}
-  playerPrefab: {fileID: 103, guid: 5f81da6e19bc7ff41a34793284d27d4e, type: 3}
+  playerPrefab: {fileID: 104, guid: 5f81da6e19bc7ff41a34793284d27d4e, type: 3}
 --- !u!114 &3103257300412126714
 MonoBehaviour:
   m_ObjectHideFlags: 0
