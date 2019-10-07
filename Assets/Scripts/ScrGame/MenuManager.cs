@@ -94,8 +94,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public void OnClickJoinRoom()
     {
-        LobbyScreen.SetActive(false);
-        JoinScreen.SetActive(true);
+        StartCoroutine(WaitForAnimationJoinButton());
     }
 
     public void OnClickSetting()
@@ -205,6 +204,13 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     }
 
+    IEnumerator WaitForAnimationJoinButton()
+    {
+        yield return new WaitForSeconds(1.2f);
+        LobbyScreen.SetActive(false);
+        JoinScreen.SetActive(true);
+    }
+
     IEnumerator WaitForAnimationSettingButton()
     {
         yield return new WaitForSeconds(1.2f);
@@ -219,7 +225,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     IEnumerator WaitForAnimationBackCharacter()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.8f);
         roomData = null;
         CharacterScreen.SetActive(false);
         LevelScreen.SetActive(true);
@@ -228,7 +234,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     IEnumerator WaitForAnimationOnClickLevel(int level)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.8f);
         roomData = new RoomData(level);
         LevelScreen.SetActive(false);
         CharacterScreen.SetActive(true);
@@ -239,6 +245,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(.8f);
         LevelScreen.SetActive(false);
         LobbyScreen.SetActive(true);
+        titleText.SetActive(true);
     }
 
 
