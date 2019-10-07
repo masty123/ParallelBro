@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 Debug.Log(player.NickName);
             }
         }
+        playerIndex();
     }
 
     /// <summary>
@@ -34,6 +35,44 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         // instancate player prefab
         PhotonNetwork.Instantiate(playerPrefab.name, playerPrefab.transform.position, Quaternion.identity, 0);
+    }
+
+    public void playerIndex()
+    {
+        GameObject myPlayer = null;
+        GameObject otherPlayer = null;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("player");
+        foreach (GameObject player in players)
+        {
+            if (player.GetComponent<PhotonView>().IsMine)
+            {
+                myPlayer = player;
+            }
+            else
+            {
+                otherPlayer = player;
+            }
+        }
+        // detemine player index
+        // if host
+        if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
+        {
+            int HostPlayerIndex = UserData.GetInstance().GetCharacterIndex();
+            myPlayer.GetComponent<PhotonView>().RPC("SetAll", RpcTarget.AllBuffered, HostPlayerIndex);
+            Debug.Log(otherPlayer);
+            if (otherPlayer == null)
+            {
+                return;
+            }
+            if (HostPlayerIndex == 1)
+            {
+                otherPlayer.GetComponent<PhotonView>().RPC("SetAll", RpcTarget.AllBuffered, 2);
+            }
+            else
+            {
+                otherPlayer.GetComponent<PhotonView>().RPC("SetAll", RpcTarget.AllBuffered, 1);
+            }
+        }
     }
 
     /// <summary>

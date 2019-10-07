@@ -11,6 +11,7 @@ TagManager:
   - Switch
   - interactable
   - transfer
+  - gamemanager
   layers:
   - Default
   - TransparentFX

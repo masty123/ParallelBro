@@ -4,6 +4,20 @@ using Photon.Pun;
 public class NetworkRPC : MonoBehaviour
 {
     [PunRPC]
+    public void SetAll(int playerIndex)
+    {
+        GetComponent<NetworkOwnerShip>().SetPlayerIndex(playerIndex);
+    }
+
+    [PunRPC]
+    public void RequestPlayerIndex()
+    {
+        // GameManager
+        GameObject gm = GameObject.FindGameObjectWithTag("gamemanager");
+        gm.GetComponent<GameManager>().playerIndex();
+    }
+
+    [PunRPC]
     public void Interact(int ID)
     {
         IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);

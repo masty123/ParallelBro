@@ -46,5 +46,7 @@ MonoBehaviour:
   - PickUp
   - DropDown
   - ChangeOwnership
+  - SetAll
+  - RequestPlayerIndex
   DisableAutoOpenWizard: 1
   ShowSettings: 1
