@@ -65,5 +65,6 @@ public class NetworkRPC : MonoBehaviour
             visible.visiblePlayer = VisiblePlayer.PLAYER_1;
         }
         visible.recheckVisible();
+        GetComponent<PickingThings>().toPickUp = null;
     }
 }
