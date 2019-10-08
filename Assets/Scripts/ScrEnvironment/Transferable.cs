@@ -45,4 +45,10 @@ public class Transferable : MonoBehaviour
             players[0].GetComponent<PlayerAction>().ChangeOwnership(ID);
         }
     }
+
+    public InteractableVisible GetVisiblePlayer()
+    {
+        return visibility;
+    }
+
 }
