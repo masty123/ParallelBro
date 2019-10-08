@@ -8,6 +8,8 @@ public class EndChecker : MonoBehaviour
     public Transferable[] needToBeAtPlayer1;
     public Transferable[] needToBeAtPlayer2;
 
+    public GameObject endPopup;
+
     //For debug
     /*
     private void Update()

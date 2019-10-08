@@ -1074,6 +1074,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isToggle: 0
+--- !u!1 &795831069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3323701508263895736, guid: f0c6e4212f323d945b589850aac15e74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3323701507181444422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &822593629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,5 +2054,10 @@ PrefabInstance:
       propertyPath: needToBeAtPlayer2.Array.data[0]
       value: 
       objectReference: {fileID: 2013445514}
+    - target: {fileID: 3724852554333242164, guid: 1b49b6fdefb3a744fb6eaa16ff0ef8b9,
+        type: 3}
+      propertyPath: endPopup
+      value: 
+      objectReference: {fileID: 795831069}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b49b6fdefb3a744fb6eaa16ff0ef8b9, type: 3}

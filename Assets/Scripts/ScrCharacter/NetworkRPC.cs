@@ -72,5 +72,14 @@ public class NetworkRPC : MonoBehaviour
         }
         visible.recheckVisible();
         GetComponent<PickingThings>().toPickUp = null;
+        GameObject endChecker = GameObject.Find("EndChecker");
+        if (endChecker != null)
+        {
+            EndChecker endCheckerScript = endChecker.GetComponent<EndChecker>();
+            if (endCheckerScript.isEnd())
+            {
+                endCheckerScript.endPopup.SetActive(true);
+            }
+        }
     }
 }
