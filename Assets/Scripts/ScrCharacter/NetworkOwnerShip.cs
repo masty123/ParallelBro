@@ -18,7 +18,14 @@ public class NetworkOwnerShip : MonoBehaviourPun
         }
         else
         {
-            SetPlayerIndex(UserData.GetInstance().GetCharacterIndex());
+            if (GetComponent<PhotonView>().IsMine)
+            {
+                SetPlayerIndex(UserData.GetInstance().GetCharacterIndex());
+            }
+            else
+            {
+                SetPlayerIndex(UserData.GetInstance().GetCharacterIndex() == 1 ? 2 : 1);
+            }
         }
     }
 
