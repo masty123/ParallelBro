@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitingRoomReady : MonoBehaviour
+public class ReadyStatus : MonoBehaviour
 {
 
     bool isReady = false;
