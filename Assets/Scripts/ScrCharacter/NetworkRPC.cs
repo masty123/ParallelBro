@@ -4,6 +4,12 @@ using Photon.Pun;
 public class NetworkRPC : MonoBehaviour
 {
     [PunRPC]
+    public void Ready()
+    {
+        VDebug.Instance.Log("Ready");
+    }
+
+    [PunRPC]
     public void SetAll(int playerIndex)
     {
         GetComponent<NetworkOwnerShip>().SetPlayerIndex(playerIndex);

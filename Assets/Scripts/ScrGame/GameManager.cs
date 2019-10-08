@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            // Ready();
             if (PhotonNetwork.IsMasterClient)
             {
                 Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
@@ -91,6 +92,26 @@ public class GameManager : MonoBehaviourPunCallbacks
                 PhotonNetwork.LoadLevel("prototype");
             }
         }
+    }
+
+    public void Ready()
+    {
+        GameObject myPlayer = null;
+        GameObject otherPlayer = null;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("player");
+        foreach (GameObject player in players)
+        {
+            if (player.GetComponent<PhotonView>().IsMine)
+            {
+                myPlayer = player;
+            }
+            else
+            {
+                otherPlayer = player;
+            }
+        }
+
+        myPlayer.GetComponent<PlayerAction>().Ready();
     }
 
     public override void OnPlayerEnteredRoom(Player other)

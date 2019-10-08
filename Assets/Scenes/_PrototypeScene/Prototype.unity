@@ -168,6 +168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestActiveBox
       objectReference: {fileID: 0}
+    - target: {fileID: 7607735257874725421, guid: 777ec58e584318d4e95641a2f1189c14,
+        type: 3}
+      propertyPath: m_TagString
+      value: interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 7607735257874725422, guid: 777ec58e584318d4e95641a2f1189c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -805,6 +810,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2ActiveBox
       objectReference: {fileID: 0}
+    - target: {fileID: 7607735257874725421, guid: 777ec58e584318d4e95641a2f1189c14,
+        type: 3}
+      propertyPath: m_TagString
+      value: interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 7607735257874725422, guid: 777ec58e584318d4e95641a2f1189c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -935,6 +945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1ActiveBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607735257874725421, guid: 777ec58e584318d4e95641a2f1189c14,
+        type: 3}
+      propertyPath: m_TagString
+      value: interactable
       objectReference: {fileID: 0}
     - target: {fileID: 7607735257874725422, guid: 777ec58e584318d4e95641a2f1189c14,
         type: 3}
@@ -1535,7 +1550,7 @@ PrefabInstance:
     - target: {fileID: 6275434485613136875, guid: 9ddb81071df70a84c95b5dedf61311be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.774
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: 6275434485613136875, guid: 9ddb81071df70a84c95b5dedf61311be,
         type: 3}
