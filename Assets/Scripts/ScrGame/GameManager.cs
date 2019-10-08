@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public Text RoomCodeText;
 
     public GameObject playerPrefab;
+    public Button startButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,10 @@ public class GameManager : MonoBehaviourPunCallbacks
             {
                 Debug.Log(player.NickName);
             }
+        }
+        if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
+        {
+            startButton.gameObject.SetActive(false);
         }
         playerIndex();
     }
@@ -75,23 +80,10 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
-    void Update()
+    public void StartGame()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            // Ready();
-            if (PhotonNetwork.IsMasterClient)
-            {
-                Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
-
-
-                // LoadArena();
-                PhotonNetwork.LoadLevel("prototype");
-            }
-        }
+        // LoadArena();
+        PhotonNetwork.LoadLevel("prototype");
     }
 
     public void Ready()

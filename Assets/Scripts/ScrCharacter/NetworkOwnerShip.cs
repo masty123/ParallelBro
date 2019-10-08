@@ -37,6 +37,8 @@ public class NetworkOwnerShip : MonoBehaviourPun
             Character1.GetComponent<SpriteRenderer>().color = Color.black;
             Character2.GetComponent<SpriteRenderer>().color = Color.black;
             gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
+            Character1.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            Character2.GetComponent<SpriteRenderer>().sortingOrder = -1;
         }
         else
         {
