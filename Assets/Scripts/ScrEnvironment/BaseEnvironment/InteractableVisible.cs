@@ -48,15 +48,8 @@ public class InteractableVisible : MonoBehaviour
         {
             return;
         }
-        // Debug.Log(player);
-        Debug.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex);
-        Debug.Log(visiblePlayer);
-
-        Debug.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex != (int)visiblePlayer);
         if (player.GetComponent<NetworkOwnerShip>().PlayerIndex != (int)visiblePlayer)
         {
-            Debug.Log("Disabled");
-            VDebug.Instance.Log(player.GetComponent<NetworkOwnerShip>().PlayerIndex.ToString());
             disableNonVisible();
         }
     }
@@ -86,10 +79,6 @@ public class InteractableVisible : MonoBehaviour
         {
             this.GetComponent<Rigidbody2D>().simulated = false;
         }
-        // Destroy(gameObject.GetComponent<Animator>());
-        // this.GetComponent<SpriteRenderer>().color = Color.black;
-        // Destroy(gameObject.GetComponent<Collider2D>());
-        // Destroy(gameObject.GetComponent<Rigidbody2D>());
     }
 
     public void recheckVisible()

@@ -11,6 +11,7 @@ public class UserData : MonoBehaviour
     [SerializeField]
     private string userId = "101";
     // image
+    [SerializeField]
     private int characterIndex = 0;
 
     /// <summary>

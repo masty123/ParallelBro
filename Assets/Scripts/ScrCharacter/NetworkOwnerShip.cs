@@ -16,90 +16,71 @@ public class NetworkOwnerShip : MonoBehaviourPun
         {
             GetComponent<PhotonView>().RPC("RequestPlayerIndex", RpcTarget.AllBuffered);
         }
+        else
+        {
+            if (GetComponent<PhotonView>().IsMine)
+            {
+                SetPlayerIndex(UserData.GetInstance().GetCharacterIndex());
+            }
+            else
+            {
+                SetPlayerIndex(UserData.GetInstance().GetCharacterIndex() == 1 ? 2 : 1);
+            }
+        }
     }
 
     // Start is called before the first frame update
-    // void Start()
-    // {
-    //     // // detemine player index
-    //     // // if host
-    //     // if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
-    //     // {
-    //     //     PlayerIndex = UserData.GetInstance().GetCharacterIndex();
-    //     //     GetComponent<PhotonView>().RPC("SetAll", RpcTarget.AllBuffered, PlayerIndex);
-    //     // }
-    //     // else
-    //     // {
-    //     //     // Find other player
-    //     //     GameObject myPlayer = null;
-    //     //     int myPlayerIndex = 0;
-    //     //     GameObject[] players = GameObject.FindGameObjectsWithTag("player");
-    //     //     foreach (GameObject player in players)
-    //     //     {
-    //     //         if (player.GetComponent<PhotonView>().IsMine)
-    //     //         {
-    //     //             myPlayer = player;
-    //     //             continue;
-    //     //         }
-    //     //         int index = player.GetComponent<NetworkOwnerShip>().PlayerIndex;
-    //     //         PlayerIndex = index;
-    //     //         if (index == 1)
-    //     //         {
-    //     //             myPlayerIndex = 2;
-    //     //         }
-    //     //         else if (index == 2)
-    //     //         {
-    //     //             myPlayerIndex = 1;
-    //     //         }
-    //     //         checkCharacterSprite();
-    //     //     }
-    //     //     myPlayer.GetComponent<NetworkOwnerShip>().SetPlayerIndex(myPlayerIndex);
-    //     // }
-    //     checkCharacterSprite();
-    // }
+    void Start()
+    {
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
+        {
+            Character1.GetComponent<SpriteRenderer>().color = Color.black;
+            Character2.GetComponent<SpriteRenderer>().color = Color.black;
+            gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().Player = this.gameObject;
+        }
+    }
 
     public void SetPlayerIndex(int playerIndex)
     {
         this.PlayerIndex = playerIndex;
+        if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient && GetComponent<PhotonView>().IsMine)
+        {
+            UserData.GetInstance().SetCharacterIndex(playerIndex);
+        }
         checkCharacterSprite();
+        // checkVisibility();
+    }
+
+    private void checkVisibility()
+    {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("interactable");
+        foreach (GameObject go in gos)
+        {
+            InteractableVisible iv = go.GetComponent<InteractableVisible>();
+            if (iv == null)
+            {
+                continue;
+            }
+            iv.recheckVisible();
+        }
     }
 
 
     private void checkCharacterSprite()
     {
-        // is other player
-        if (PhotonNetwork.IsConnected && !photonView.IsMine)
+        if (PlayerIndex == 1)
         {
-            gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
-            if (PlayerIndex == 2)
-            {
-                // Character2.
-                Character1.SetActive(false);
-                Character2.SetActive(true);
-                Character2.GetComponent<SpriteRenderer>().color = Color.black;
-            }
-            else
-            {
-                Character2.SetActive(false);
-                Character1.SetActive(true);
-                Character1.GetComponent<SpriteRenderer>().color = Color.black;
-            }
+            Character2.SetActive(false);
+            Character1.SetActive(true);
         }
-        // is my own player
         else
         {
-            // attach to camera
-            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().Player = this.gameObject;
-            if (PlayerIndex == 1)
-            {
-                Character2.SetActive(false);
-                Character1.SetActive(true);
-            }
-            else
-            {
-                Character1.SetActive(false);
-                Character2.SetActive(true);
-            }
+            Character1.SetActive(false);
+            Character2.SetActive(true);
         }
     }
 }

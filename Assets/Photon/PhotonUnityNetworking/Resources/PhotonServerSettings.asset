@@ -48,5 +48,6 @@ MonoBehaviour:
   - ChangeOwnership
   - SetAll
   - RequestPlayerIndex
+  - Ready
   DisableAutoOpenWizard: 1
   ShowSettings: 1

@@ -19,6 +19,11 @@ public class PlayerAction : MonoBehaviour
         isOffline = !PhotonNetwork.IsConnected;
     }
 
+    public void Ready()
+    {
+        networkRPC.Ready();
+    }
+
     public void Interact(int ID)
     {
         // do network thing here;

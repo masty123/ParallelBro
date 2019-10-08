@@ -32,6 +32,11 @@ public class InteractableFactory : MonoBehaviour
         for (int i = 0; i < interactables.Length; i++)
         {
             int ID = GetID(interactables[i].GetComponent<IInteractable>());
+            if(interactables[i].GetComponent<IInteractable>() == null)
+            {
+                VDebug.Instance.Log(interactables[i].gameObject.name + " is not IInteractable");
+                continue;
+            }
             interactables[i].GetComponent<IInteractable>().ID = ID;
             VDebug.Instance.Log(i + " = " + interactables[i].gameObject.name + " : " + ID);
         }
