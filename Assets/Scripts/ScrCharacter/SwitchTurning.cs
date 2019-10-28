@@ -42,28 +42,65 @@ public class SwitchTurning : MonoBehaviour
 
     private void turnItOn()
     {
-        if (turningSwitch != null && pickingThings.holdingItem == null && pickingThings.toPickUp == null)
+        if(turningSwitch != null)
         {
-            int id = turningSwitch.ID;
-            GetComponent<PlayerAction>().Interact(id);
+            Debug.Log(turningSwitch.requiredKey);
+            if (turningSwitch.requiredKey != null && pickingThings.holdingItem != null)
+            {
+                if(GameObject.ReferenceEquals(turningSwitch.requiredKey, pickingThings.holdingItem))
+                {
+                    int id = turningSwitch.ID;
+                    GetComponent<PlayerAction>().Interact(id);
+                }
+            }
+            else if (turningSwitch.requiredKey == null && pickingThings.holdingItem == null && pickingThings.toPickUp == null)
+            {
+                int id = turningSwitch.ID;
+                GetComponent<PlayerAction>().Interact(id);
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Switch>())
+
+        Debug.Log("Hit " + collision.gameObject.name);
+
+        Switch collisionSwitch = collision.gameObject.GetComponent<Switch>();
+
+        if (collisionSwitch != null)
         {
-            turningSwitch = collision.gameObject.GetComponent<Switch>();
+            if (!collisionSwitch.isForStepOn)
+            {
+                turningSwitch = collision.gameObject.GetComponent<Switch>();
+            }
+            // This is for step in switches
+            else
+            {
+                // Toggle right away to step in
+                int id = collisionSwitch.ID;
+                GetComponent<PlayerAction>().Interact(id);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Switch>())
+
+        Switch collisionSwitch = collision.gameObject.GetComponent<Switch>();
+
+        if (collisionSwitch != null)
         {
-            if (collision.gameObject.GetComponent<Switch>().Equals(turningSwitch))
+            if (collisionSwitch.Equals(turningSwitch))
             {
                 turningSwitch = null;
+            }
+            // Disable step on switch when leave
+            if (collisionSwitch.isForStepOn)
+            {
+                int id = collisionSwitch.ID;
+                // Toggle again to turn off switch
+                GetComponent<PlayerAction>().Interact(id);
             }
         }
 

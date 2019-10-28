@@ -7,6 +7,9 @@ public class Switch : IInteractable
     private bool isOn = false;
     public ITargetable[] Targets;
     private Animator animator;
+    public bool isForStepOn = false;
+    public GameObject requiredKey;
+
     public override void Start()
     {
         animator = GetComponent<Animator>();
