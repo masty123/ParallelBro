@@ -60,8 +60,19 @@ public class Character2DController : MonoBehaviour
                     OnLandEvent.Invoke();
             }
         }
+        // If the input is moving the player right and the player is facing left...
+        if (m_Rigidbody2D.velocity.x > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (m_Rigidbody2D.velocity.x < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
     }
-
 
     public void Move(float move, bool crouch, bool jump)
     {
@@ -112,19 +123,6 @@ public class Character2DController : MonoBehaviour
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-            // If the input is moving the player right and the player is facing left...
-            if (m_Rigidbody2D.velocity.x > 0 && !m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
-            // Otherwise if the input is moving the player left and the player is facing right...
-            else if (m_Rigidbody2D.velocity.x < 0 && m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
         }
         // If the player should jump...
         if (m_Grounded && jump)
