@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrSwitch : Switch
+public class XorSwitch : Switch
 {
-    public Switch[] switchsToToggle;
+    public Switch[] switchsToToggle = new Switch[2];
 
     public override void Interact()
     {
@@ -24,14 +24,7 @@ public class OrSwitch : Switch
     // Update is called once per frame
     void Update()
     {
-        bool isOn = false;
-        foreach (Switch sw in switchsToToggle)
-        {
-            if (sw.isOn)
-            {
-                isOn = true;
-            }
-        }
+        bool isOn = switchsToToggle[0].isOn != switchsToToggle[1].isOn;
 
         if (isOn != this.isOn)
         {

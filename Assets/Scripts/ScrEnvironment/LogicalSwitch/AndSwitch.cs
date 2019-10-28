@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AndSwitch : IInteractable
+public class AndSwitch : Switch
 {
-    public IInteractable[] switchsToToggle;
-    public ITargetable[] Targets;
-    public bool isOn = false;
+    public Switch[] switchsToToggle;
 
     public override void Interact()
     {
