@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AndSwitch : IInteractable
+public class OrSwitch : IInteractable
 {
     public IInteractable[] switchsToToggle;
     public ITargetable[] Targets;
@@ -26,12 +26,12 @@ public class AndSwitch : IInteractable
     // Update is called once per frame
     void Update()
     {
-        bool isOn = true;
+        bool isOn = false;
         foreach (Switch sw in switchsToToggle)
         {
-            if (!sw.isOn)
+            if (sw.isOn)
             {
-                isOn = false;
+                isOn = true;
             }
         }
 
