@@ -4,7 +4,8 @@ public class Switch : IInteractable
 {
     [Tooltip("this is for switch animator, not related with the target")]
     public bool isToggle = true;
-    private bool isOn = false;
+    [HideInInspector]
+    public bool isOn = false;
     public ITargetable[] Targets;
     private Animator animator;
     public override void Start()
