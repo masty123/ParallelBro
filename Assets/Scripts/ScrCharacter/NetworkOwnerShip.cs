@@ -37,12 +37,17 @@ public class NetworkOwnerShip : MonoBehaviourPun
             Character1.GetComponent<SpriteRenderer>().color = Color.black;
             Character2.GetComponent<SpriteRenderer>().color = Color.black;
             gameObject.layer = LayerMask.NameToLayer("OtherPlayer");
-            Character1.GetComponent<SpriteRenderer>().sortingOrder = -1;
-            Character2.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            Character1.GetComponent<SpriteRenderer>().sortingLayerName = "Shadow";
+            Character2.GetComponent<SpriteRenderer>().sortingLayerName = "Shadow";
         }
         else
         {
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().Player = this.gameObject;
+            Character1.GetComponent<SpriteRenderer>().color = Color.white;
+            Character2.GetComponent<SpriteRenderer>().color = Color.white;
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            Character1.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+            Character2.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         }
     }
 
@@ -84,5 +89,6 @@ public class NetworkOwnerShip : MonoBehaviourPun
             Character1.SetActive(false);
             Character2.SetActive(true);
         }
+        Start();
     }
 }

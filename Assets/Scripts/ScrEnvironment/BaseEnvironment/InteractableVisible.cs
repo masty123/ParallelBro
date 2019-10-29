@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
 
 public enum VisiblePlayer
 {
@@ -12,18 +13,22 @@ public enum VisiblePlayer
 
 public class InteractableVisible : MonoBehaviour
 {
-    private Color defaultColor;
     public bool hideRenderer = true;
     public bool hideRigidbody = true;
     public bool hideAnimator = true;
     public bool hideCollider = true;
+
     public VisiblePlayer visiblePlayer = VisiblePlayer.BOTH_PLAYER;
     private bool isOffline = true;
     private GameObject player;
+
+    private List<SpriteRenderer> spl = new List<SpriteRenderer>();
+    private List<Rigidbody2D> rbl = new List<Rigidbody2D>();
+    private List<Animator> aml = new List<Animator>();
+    private List<Collider2D> cdl = new List<Collider2D>();
     // Start is called before the first frame update
     void Start()
     {
-        defaultColor = GetComponent<SpriteRenderer>().color;
         isOffline = !PhotonNetwork.IsConnected;
         GameObject[] players = GameObject.FindGameObjectsWithTag("player");
         // which one is current player;
@@ -48,63 +53,109 @@ public class InteractableVisible : MonoBehaviour
         {
             return;
         }
+
+        if (hideAnimator)
+        {
+            aml = getList<Animator>();
+        }
+        if (hideCollider)
+        {
+            cdl = getList<Collider2D>();
+        }
+        if (hideRenderer)
+        {
+            spl = getList<SpriteRenderer>();
+        }
+        if (hideRigidbody)
+        {
+            rbl = getList<Rigidbody2D>();
+        }
+
         if (player.GetComponent<NetworkOwnerShip>().PlayerIndex != (int)visiblePlayer)
         {
             disableNonVisible();
         }
     }
 
+    private List<T> getList<T>()
+    {
+        List<T> list = new List<T>();
+        T[] go = GetComponents<T>();
+        list.AddRange(go);
+        T[] goc = GetComponentsInChildren<T>();
+        list.AddRange(goc);
+        return list;
+    }
+
     private void disableNonVisible()
     {
-        Debug.Log("Disabled : " + this.gameObject.name);
         if (hideRenderer)
         {
-            this.GetComponent<SpriteRenderer>().color = Color.black;
+            foreach (SpriteRenderer sp in spl)
+            {
+                sp.color = Color.black;
+                sp.sortingLayerName = "Shadow";
+            }
         }
 
         if (hideCollider)
         {
-            foreach (Collider2D colliers in this.GetComponents<Collider2D>())
+            foreach (Collider2D cd in cdl)
             {
-                colliers.enabled = false;
+                cd.enabled = false;
             }
         }
 
         if (hideAnimator)
         {
-            this.GetComponent<Animator>().enabled = false;
+            foreach (Animator am in aml)
+            {
+                am.enabled = false;
+            }
         }
 
         if (hideRigidbody)
         {
-            this.GetComponent<Rigidbody2D>().simulated = false;
+            foreach (Rigidbody2D rb in rbl)
+            {
+                rb.simulated = false;
+            }
         }
     }
 
     public void recheckVisible()
     {
-        Debug.Log("Rechecked");
         if (hideRenderer)
         {
-            this.GetComponent<SpriteRenderer>().color = defaultColor;
+            foreach (SpriteRenderer sp in spl)
+            {
+                sp.color = Color.white;
+                sp.sortingLayerName = "Interactable";
+            }
         }
 
         if (hideCollider)
         {
-            foreach (Collider2D colliers in this.GetComponents<Collider2D>())
+            foreach (Collider2D cd in cdl)
             {
-                colliers.enabled = true;
+                cd.enabled = true;
             }
         }
 
         if (hideAnimator)
         {
-            this.GetComponent<Animator>().enabled = true;
+            foreach (Animator am in aml)
+            {
+                am.enabled = true;
+            }
         }
 
         if (hideRigidbody)
         {
-            this.GetComponent<Rigidbody2D>().simulated = true;
+            foreach (Rigidbody2D rb in rbl)
+            {
+                rb.simulated = true;
+            }
         }
 
         Start();
