@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2291057534976044341}
   - component: {fileID: 6798095189342705388}
   - component: {fileID: 6798095189182338856}
-  m_Layer: 31
+  m_Layer: 10
   m_Name: HideAbleGroundLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 8603033082460785930}
   _collider: {fileID: 6798095189342705388}
+  isOn: 0
   IsToggle: 1
 --- !u!1 &8384166472742143156
 GameObject:
@@ -84,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9158907016291611884}
   - component: {fileID: 8603033082460785930}
-  m_Layer: 31
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

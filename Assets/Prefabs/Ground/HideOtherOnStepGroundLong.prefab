@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6146257312006789228}
   - component: {fileID: 6146257312183933352}
   - component: {fileID: 800598364610596508}
-  m_Layer: 31
+  m_Layer: 10
   m_Name: HideOtherOnStepGroundLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _switch: {fileID: 800598364567193845}
+  isOn: 0
 --- !u!1 &9171229917664676404
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8360566155550358124}
   - component: {fileID: 8969014287458485130}
-  m_Layer: 31
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,6 +180,10 @@ PrefabInstance:
     - target: {fileID: 1566203006, guid: 0f5b3c4182c96674e979e3aeff4c77ee, type: 3}
       propertyPath: m_Name
       value: Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566203006, guid: 0f5b3c4182c96674e979e3aeff4c77ee, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1566203011, guid: 0f5b3c4182c96674e979e3aeff4c77ee, type: 3}
       propertyPath: m_LocalPosition.x
