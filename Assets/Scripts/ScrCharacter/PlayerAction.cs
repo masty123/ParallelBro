@@ -100,7 +100,7 @@ public class PlayerAction : MonoBehaviour
     public void ChangeOwnership(int ID)
     {
         IInteractable interactable = InteractableFactory.Instance.GetInteractable(ID);
-        if(isOffline)
+        if (isOffline)
         {
             networkRPC.ChangeOwnership(interactable.ID);
             return;
@@ -112,5 +112,11 @@ public class PlayerAction : MonoBehaviour
             case EffectType.EFFECT_OWN: networkRPC.Interact(interactable.ID); break;
             case EffectType.EFFECT_OTHER: photonView.RPC("ChangeOwnership", RpcTarget.OthersBuffered, ID); break;
         }
+    }
+
+    public void Disconnect()
+    {
+        photonView.RPC("Disconnect", RpcTarget.OthersBuffered);
+        networkRPC.Disconnect();
     }
 }

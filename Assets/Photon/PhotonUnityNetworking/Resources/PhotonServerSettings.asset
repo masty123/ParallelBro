@@ -49,5 +49,6 @@ MonoBehaviour:
   - SetAll
   - RequestPlayerIndex
   - Ready
+  - Disconnect
   DisableAutoOpenWizard: 1
   ShowSettings: 1

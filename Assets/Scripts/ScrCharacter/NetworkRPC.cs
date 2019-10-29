@@ -82,4 +82,10 @@ public class NetworkRPC : MonoBehaviour
             }
         }
     }
+
+    [PunRPC]
+    public void Disconnect()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
 }

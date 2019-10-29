@@ -10,6 +10,14 @@ public class InGameFinishManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!PhotonNetwork.IsConnected)
+        {
+            foreach (GameObject Host in Hosts)
+            {
+                Host.SetActive(false);
+            }
+            return;
+        }
         if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
         {
             foreach (GameObject nonHost in nonHosts)
@@ -30,7 +38,19 @@ public class InGameFinishManager : MonoBehaviour
     {
         if (PhotonNetwork.IsConnected)
         {
-            PhotonNetwork.Disconnect();
+            GameObject[] gos = GameObject.FindGameObjectsWithTag("player");
+            foreach (GameObject go in gos)
+            {
+                if (go.GetComponent<PhotonView>().IsMine)
+                {
+                    PlayerAction pa = go.GetComponent<PlayerAction>();
+                    pa.Disconnect();
+                }
+            }
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("gamemanager").GetComponent<GameManager>().OnLeftRoom();
         }
     }
 
