@@ -19,12 +19,14 @@ public class CameraFollow : MonoBehaviour
     }
 
     public float smoothSpeed = 0.125f;
-	public Vector3 offset;
+    public Vector3 offset;
+    public float JumpZoomOutSize = 6.5f;
+    private float defaultSize;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        defaultSize = GetComponent<Camera>().orthographicSize;
     }
 
     // Update is called once per frame
@@ -38,8 +40,20 @@ public class CameraFollow : MonoBehaviour
 
         Vector3 desiredPosition = playerTransform + offset;
         // VDebug.Instance.Log(desiredPosition.)
-		Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-		transform.position = smoothedPosition;
-		// transform.LookAt(playerTransform);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
+        // transform.LookAt(playerTransform);
+
+        // if() not ground
+        // Debug.Log(player.GetComponent<Character2DController>().m_Grounded);
+        if (!player.GetComponent<Character2DController>().m_Grounded)
+        {
+            GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, JumpZoomOutSize, smoothSpeed);
+        }
+        else
+        {
+            GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, defaultSize, smoothSpeed);
+        }
+        // if ground
     }
 }

@@ -25,7 +25,8 @@ public class CharacterAnimationController : MonoBehaviour
     private void FixedUpdate()
     {
         //Horizonal moving
-        float move = Input.GetAxis("Horizontal");
+        // float move = Input.GetAxis("Horizontal");
+        float move = rb.velocity.x;
         animator.SetFloat("Speed", Mathf.Abs(move));
         //Vertical moving
         animator.SetFloat("VerticalSpeed", rb.velocity.y);
