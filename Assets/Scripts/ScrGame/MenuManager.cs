@@ -188,6 +188,11 @@ public class MenuManager : MonoBehaviourPunCallbacks
         return names[Random.Range(0, names.Length)];
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
 
     IEnumerator WaitForAnimationLogin()
     {
