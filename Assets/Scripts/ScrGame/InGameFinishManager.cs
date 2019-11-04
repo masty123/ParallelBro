@@ -54,8 +54,11 @@ public class InGameFinishManager : MonoBehaviour
         }
     }
 
+
     public void LoadLevel(string sceneName)
     {
         PhotonNetwork.LoadLevel(sceneName);
     }
+
+
 }
