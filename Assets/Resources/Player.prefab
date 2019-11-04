@@ -355,39 +355,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &518
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2856956268772610200}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 02936e6a870b60848b3766e3b4b535d7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1431993406747692903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2856956268772610200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d4047622e35500479f609750e604e9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 548}
-  animator: {fileID: 518}
 --- !u!1001 &3051159129068113046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,11 +453,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaleCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 6015951984402929585, guid: 67322d5877f5d20448208e0ec3b23478,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7745363515280851577, guid: 67322d5877f5d20448208e0ec3b23478,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -546,22 +508,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7745363515280851577, guid: 67322d5877f5d20448208e0ec3b23478,
+    - target: {fileID: 1431993406747692903, guid: 67322d5877f5d20448208e0ec3b23478,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7745363515280851577, guid: 67322d5877f5d20448208e0ec3b23478,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509288348773026857, guid: 67322d5877f5d20448208e0ec3b23478,
-        type: 3}
-      propertyPath: m_Sprite
+      propertyPath: character
       value: 
-      objectReference: {fileID: 21300000, guid: fdef0a1c2be1c5b4e89a1ead722e4407,
-        type: 3}
+      objectReference: {fileID: 548}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67322d5877f5d20448208e0ec3b23478, type: 3}
 --- !u!1 &2856956268772610200 stripped
