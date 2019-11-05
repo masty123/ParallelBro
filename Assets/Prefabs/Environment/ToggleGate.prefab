@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5276387462541626629}
   - component: {fileID: 2229775642494188284}
   - component: {fileID: 607356681}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: ToggleGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5723048032721197812}
   - component: {fileID: 3259779361426116114}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: UpperSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1252413741560885622}
   - component: {fileID: 5183557097604311902}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: LowerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
