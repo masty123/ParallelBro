@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/_PrototypeScene/WaitingScene.unity
     guid: 8c041dc12b5de2a45ab552e854da7f24
   - enabled: 1
-    path: Assets/Scenes/_PrototypeScene/Prototype.unity
+    path: Assets/Scenes/_PrototypeScene/Level1.unity
     guid: 6eec0e3518c18fe45b443890e10bba51
   - enabled: 1
     path: Assets/Scenes/_PrototypeScene/Level2.unity

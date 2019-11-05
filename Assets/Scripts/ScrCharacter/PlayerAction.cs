@@ -39,7 +39,10 @@ public class PlayerAction : MonoBehaviour
         {
             case EffectType.EFFECT_BOTH: photonView.RPC("Interact", RpcTarget.AllBuffered, ID); break;
             case EffectType.EFFECT_OWN: networkRPC.Interact(interactable.ID); break;
-            case EffectType.EFFECT_OTHER: photonView.RPC("Interact", RpcTarget.OthersBuffered, ID); break;
+            case EffectType.EFFECT_OTHER:
+                photonView.RPC("Interact", RpcTarget.OthersBuffered, ID);
+                interactable.SelfInteract();
+                break;
         }
     }
 

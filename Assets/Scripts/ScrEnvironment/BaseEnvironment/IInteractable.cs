@@ -27,4 +27,6 @@ public abstract class IInteractable : MonoBehaviourPun
     }
 
     public abstract void Interact();
+
+    public abstract void SelfInteract();
 }

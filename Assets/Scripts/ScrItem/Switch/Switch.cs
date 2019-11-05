@@ -4,7 +4,7 @@ public class Switch : IInteractable
 {
     [Tooltip("this is for switch animator, not related with the target")]
     public bool isToggle = true;
-    [HideInInspector]
+    // [HideInInspector]
     public bool isOn = false;
     public ITargetable[] Targets;
     private Animator animator;
@@ -28,6 +28,11 @@ public class Switch : IInteractable
         }
     }
 
+    public override void SelfInteract()
+    {
+        this.turn();
+    }
+
     private void turn()
     {
         if (isToggle)
@@ -44,4 +49,5 @@ public class Switch : IInteractable
         }
         animator.SetBool("IsOn", isOn);
     }
+
 }
