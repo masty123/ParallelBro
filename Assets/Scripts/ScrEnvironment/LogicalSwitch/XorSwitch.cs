@@ -24,6 +24,10 @@ public class XorSwitch : Switch
     // Update is called once per frame
     void Update()
     {
+        if (switchsToToggle.Length < 2)
+        {
+            return;
+        }
         bool isOn = switchsToToggle[0].isOn != switchsToToggle[1].isOn;
 
         if (isOn != this.isOn)

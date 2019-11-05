@@ -28,10 +28,6 @@ public class KeyPickup : IPickUp
             networkRPC.Interact(keyHoleToPutIn.ID);
             Destroy(gameObject);
         }
-        else
-        {
-
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,4 +47,8 @@ public class KeyPickup : IPickUp
         }
     }
 
+    public override void SelfInteract()
+    {
+        throw new System.NotImplementedException();
+    }
 }

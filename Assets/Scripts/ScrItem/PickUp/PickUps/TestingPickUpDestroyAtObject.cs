@@ -27,6 +27,11 @@ public class TestingPickUpDestroyAtObject : IPickUp
         }
     }
 
+    public override void SelfInteract()
+    {
+        throw new System.NotImplementedException();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (GameObject.ReferenceEquals(target, other.gameObject))
