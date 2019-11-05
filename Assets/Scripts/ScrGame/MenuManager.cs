@@ -54,24 +54,36 @@ public class MenuManager : MonoBehaviourPunCallbacks
         StartCoroutine(WaitForAnimationLogin());
     }
 
+    public void OnClickGuestLoginButton()
+    {
+        StartCoroutine(WaitForAnimationGuestLogin());
+    }
+
+    private void handleGuestLogin()
+    {
+        UserData.GetInstance().SetUsername(GetRandomName());
+        PhotonNetwork.NickName = UserData.GetInstance().GetUsername();
+        LoginScreen.SetActive(false);
+        HandleLobbyScreen();
+    }
+
     private void handleFacebookLogin()
     {
-        bool Success = true;
-        if (Success)
-        {
-            UserData.GetInstance().SetUsername(GetRandomName());
-            PhotonNetwork.NickName = UserData.GetInstance().GetUsername();
-            LoginScreen.SetActive(false);
-            HandleLobbyScreen();
-        }
+        GameObject go = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        go.AddComponent<FacebookInstance>();
+        go.name = "Facebook";
+        go.GetComponent<FacebookInstance>().menuManager = this;
+    }
 
-        // error handler
+    public override void OnCustomAuthenticationFailed(string debugMessage)
+    {
+        Debug.LogErrorFormat("Error authenticating to Photon using Facebook: {0}", debugMessage);
     }
     #endregion
 
     #region Lobby
     // Handle Lobby Screen
-    private void HandleLobbyScreen()
+    public void HandleLobbyScreen()
     {
         if (!PhotonNetwork.IsConnectedAndReady)
         {
@@ -81,9 +93,6 @@ public class MenuManager : MonoBehaviourPunCallbacks
         else
         {
             LobbyScreen.SetActive(true);
-            // set username
-            UserNameText.text = PhotonNetwork.NickName;
-            // set userimage if needed
         }
     }
 
@@ -108,9 +117,8 @@ public class MenuManager : MonoBehaviourPunCallbacks
     // Handle Level Screen
     public void OnClickLevel(int level)
     {
-       
-        StartCoroutine( WaitForAnimationOnClickLevel(level));
-    
+
+        StartCoroutine(WaitForAnimationOnClickLevel(level));
     }
 
     public void OnClickBackLevel()
@@ -132,8 +140,8 @@ public class MenuManager : MonoBehaviourPunCallbacks
 
     public void OnClickBackCharacter()
     {
-       StartCoroutine(WaitForAnimationBackCharacter());
-    
+        StartCoroutine(WaitForAnimationBackCharacter());
+
     }
     #endregion
 
@@ -198,6 +206,12 @@ public class MenuManager : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(1f);
         handleFacebookLogin();
+    }
+
+    IEnumerator WaitForAnimationGuestLogin()
+    {
+        yield return new WaitForSeconds(1f);
+        handleGuestLogin();
     }
 
     IEnumerator WaitForAnimationCreateButton()
