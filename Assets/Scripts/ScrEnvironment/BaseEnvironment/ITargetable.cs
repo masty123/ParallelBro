@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class ITargetable : MonoBehaviour
 {
     public abstract void Turn();
+
+    public abstract void Reset();
 }

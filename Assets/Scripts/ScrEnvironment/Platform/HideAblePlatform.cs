@@ -10,10 +10,23 @@ public class HideAblePlatform : ITargetable
     public bool isOn = false;
     public bool IsToggle = true;
 
+    private bool defaultIsOn;
+
+    public override void Reset()
+    {
+        isOn = defaultIsOn;
+        Toggle(isOn);
+
+        HideOtherOnStepPlatform ho = this.GetComponent<HideOtherOnStepPlatform>();
+        if (ho != null)
+        {
+            ho.isOn = false;
+        }
+    }
 
     public override void Turn()
     {
-        if(isOn && !IsToggle)
+        if (isOn && !IsToggle)
         {
             return;
         }
@@ -25,6 +38,7 @@ public class HideAblePlatform : ITargetable
     // Start is called before the first frame update
     void Start()
     {
+        defaultIsOn = this.isOn;
         Toggle(this.isOn);
     }
 
