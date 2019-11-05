@@ -51,6 +51,8 @@ public class NetworkRPC : MonoBehaviour
         GetComponent<PickingThings>().holdingItem = null;
     }
 
+
+
     [PunRPC]
     public void UseItem(int ID)
     {
@@ -81,6 +83,18 @@ public class NetworkRPC : MonoBehaviour
                 endCheckerScript.endPopup.SetActive(true);
             }
         }
+    }
+
+    [PunRPC]
+    public void PauseGame()
+    {
+
+    }
+
+    [PunRPC]
+    public void UnpauseGame()
+    {
+
     }
 
     [PunRPC]
