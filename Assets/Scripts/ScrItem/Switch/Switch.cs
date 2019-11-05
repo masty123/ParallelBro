@@ -10,6 +10,7 @@ public class Switch : IInteractable
     private Animator animator;
     public bool isForStepOn = false;
     public GameObject requiredKey;
+    public bool isResetSwitch = false;
 
     public override void Start()
     {
@@ -18,6 +19,17 @@ public class Switch : IInteractable
 
     public override void Interact()
     {
+        if (isResetSwitch)
+        {
+            foreach (ITargetable target in Targets)
+            {
+                if (target != null)
+                {
+                    target.Reset();
+                }
+            }
+            return;
+        }
         this.turn();
         foreach (ITargetable target in Targets)
         {

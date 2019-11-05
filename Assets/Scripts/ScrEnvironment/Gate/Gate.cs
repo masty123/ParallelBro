@@ -35,4 +35,11 @@ public class Gate : ITargetable
     {
         animator.SetBool("IsOn", isOn);
     }
+
+    public override void Reset()
+    {
+        isToggle = false;
+        isOn = false;
+        _Turn();
+    }
 }
