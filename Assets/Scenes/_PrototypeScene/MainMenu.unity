@@ -130,6 +130,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 506246597430034970}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1001577056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 506246598495324222, guid: 199933b57a1f6cd43b112e57f6143647,
+    type: 3}
+  m_PrefabInstance: {fileID: 506246597430034970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1394668627
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +386,11 @@ PrefabInstance:
       propertyPath: ShapeModule.type
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 66112768326150889, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     - target: {fileID: 964711472220891523, guid: 5bbbfdb5d28af714787d24dffaae970f,
         type: 3}
       propertyPath: m_Material
@@ -428,6 +445,19 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.placementMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002570740781727230, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078094033781593042, guid: 5bbbfdb5d28af714787d24dffaae970f,
+        type: 3}
+      propertyPath: m_Text
+      value: 'G U E S T
+
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bbbfdb5d28af714787d24dffaae970f, type: 3}
@@ -606,12 +636,45 @@ PrefabInstance:
     - target: {fileID: 506246597350087067, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583204620630837290, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -228
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246598003862658, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246598495324216, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 506246598747771690, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098828271048194998, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: UserNameText
+      value: 
+      objectReference: {fileID: 1001577056}
     - target: {fileID: 8583204620630837291, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_Name
       value: FacebookButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583204620591754193, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Text
+      value: 'F B LOG-IN
+
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199933b57a1f6cd43b112e57f6143647, type: 3}
