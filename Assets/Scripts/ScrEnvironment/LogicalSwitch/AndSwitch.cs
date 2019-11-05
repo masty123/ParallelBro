@@ -25,6 +25,10 @@ public class AndSwitch : Switch
     void Update()
     {
         bool isOn = true;
+        if(switchsToToggle.Length < 1)
+        {
+            return;
+        }
         foreach (Switch sw in switchsToToggle)
         {
             if (!sw.isOn)
