@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public Text UserNameText;
     public InputField RoomCodeText;
 
-    private RoomData roomData;
+    // private RoomData roomData;
     /* 
     * work flow
     *
@@ -125,7 +125,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     {
         UserData.GetInstance().SetCharacterIndex(characterIndex);
         // Load player waitting room scene
-        string roomName = roomData.roomName;
+        string roomName = RoomData.GetInstance().roomName;
         Debug.Log("Created : #Roomname " + roomName);
         PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions { MaxPlayers = maxPlayersPerRoom }, TypedLobby.Default);
     }
@@ -231,7 +231,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     IEnumerator WaitForAnimationBackCharacter()
     {
         yield return new WaitForSeconds(.8f);
-        roomData = null;
+        RoomData.GetInstance().level = 0;
         CharacterScreen.SetActive(false);
         LevelScreen.SetActive(true);
     }
@@ -240,7 +240,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     IEnumerator WaitForAnimationOnClickLevel(int level)
     {
         yield return new WaitForSeconds(.8f);
-        roomData = new RoomData(level);
+        RoomData.GetInstance().level = level;
         LevelScreen.SetActive(false);
         CharacterScreen.SetActive(true);
     }
@@ -251,26 +251,5 @@ public class MenuManager : MonoBehaviourPunCallbacks
         LevelScreen.SetActive(false);
         LobbyScreen.SetActive(true);
         titleText.SetActive(true);
-    }
-
-
-
-
-}
-
-class RoomData
-{
-    public int level;
-    public string roomName;
-
-    public RoomData(int level)
-    {
-        this.level = level;
-        roomName = level + GetRandomRoomName();
-    }
-
-    private string GetRandomRoomName()
-    {
-        return Random.Range(10000, 99999).ToString();
     }
 }

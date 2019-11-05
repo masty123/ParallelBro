@@ -316,20 +316,40 @@ PrefabInstance:
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 506246597882352295, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506246597611670294, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_Transition
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246597611670294, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506246598082315523, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 506246598082315523, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506246597021743607, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_Transition
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246597021743607, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506246596892531144, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}

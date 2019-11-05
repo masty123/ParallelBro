@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void StartGame()
     {
         // LoadArena();
-        PhotonNetwork.LoadLevel("prototype");
+        // PhotonNetwork.LoadLevel("prototype");
+        PhotonNetwork.LoadLevel("level" + RoomData.GetInstance().level);
     }
 
     public void Ready()
