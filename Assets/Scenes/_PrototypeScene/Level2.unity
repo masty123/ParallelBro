@@ -1010,7 +1010,7 @@ PrefabInstance:
         type: 3}
       propertyPath: endPopup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1591660366}
     - target: {fileID: 6117841404484462771, guid: dd3b6f11512e9dd48bf473976b4f4515,
         type: 3}
       propertyPath: needToBeAtPlayer2.Array.data[0]
@@ -2774,6 +2774,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd3be3d11406c945bbbaff759a32c9d, type: 3}
+--- !u!1 &1591660366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100785340, guid: fbd3be3d11406c945bbbaff759a32c9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1591660365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1610033539
 GameObject:
   m_ObjectHideFlags: 0
