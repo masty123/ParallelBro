@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         if (!PhotonNetwork.IsConnected)
         {
-            RoomCodeText.text = "Offline Mode";
+            if (RoomCodeText != null)
+                RoomCodeText.text = "Offline Mode";
         }
         else
         {
