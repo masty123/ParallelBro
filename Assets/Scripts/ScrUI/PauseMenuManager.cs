@@ -6,8 +6,6 @@ using UnityEngine;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
-    private PhotonView photonView;
-    private NetworkRPC networkRPC;
     private bool isOffline = false;
 
     /// <summary>
@@ -16,9 +14,6 @@ public class PauseMenuManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        photonView = GetComponent<PhotonView>();
-        networkRPC = GetComponent<NetworkRPC>();
-
         isOffline = !PhotonNetwork.IsConnected;
     }
 
@@ -26,7 +21,8 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (!isOffline)
         {
-            photonView.RPC("PauseGame", RpcTarget.AllBuffered);
+            FindObjectOfType<PhotonView>().RPC("PauseGame", RpcTarget.AllBuffered);
+            //photonView.RPC("PauseGame", RpcTarget.AllBuffered);
         }
         else
         {
@@ -38,7 +34,8 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (!isOffline)
         {
-            photonView.RPC("UnpauseGame", RpcTarget.AllBuffered);
+            FindObjectOfType<PhotonView>().RPC("UnpauseGame", RpcTarget.AllBuffered);
+            //photonView.RPC("UnpauseGame", RpcTarget.AllBuffered);
         }
         else
         {
