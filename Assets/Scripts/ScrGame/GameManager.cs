@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject playerPrefab;
     public Button startButton;
+    [HideInInspector]
+    public double startTime;
+    public Text TimerText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         else
         {
-            RoomCodeText.text = PhotonNetwork.CurrentRoom.Name;
+            if (RoomCodeText != null)
+                RoomCodeText.text = PhotonNetwork.CurrentRoom.Name;
             foreach (var player in PhotonNetwork.PlayerList)
             {
                 Debug.Log(player.NickName);
@@ -29,6 +34,19 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
         {
             startButton.gameObject.SetActive(false);
+        }
+        else if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject myPlayer = null;
+            GameObject[] players = GameObject.FindGameObjectsWithTag("player");
+            foreach (GameObject player in players)
+            {
+                if (player.GetComponent<PhotonView>().IsMine)
+                {
+                    myPlayer = player;
+                }
+            }
+            myPlayer.GetComponent<PhotonView>().RPC("SetTimer", RpcTarget.AllBuffered, PhotonNetwork.Time);
         }
         playerIndex();
     }
@@ -40,6 +58,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         // instancate player prefab
         PhotonNetwork.Instantiate(playerPrefab.name, playerPrefab.transform.position, Quaternion.identity, 0);
+    }
+
+    private void FixedUpdate()
+    {
+        int ActualTime = Mathf.RoundToInt((float)(PhotonNetwork.Time - startTime));
+        int second = ActualTime % 60;
+        int minute = ActualTime / 60;
+        TimerText.text = minute.ToString() + ":" + second.ToString("00");
     }
 
     public void playerIndex()
