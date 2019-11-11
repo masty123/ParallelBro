@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 733391366675309368}
+  restartButton: {fileID: 5424232280691304191}
 --- !u!1 &3323701506254598655
 GameObject:
   m_ObjectHideFlags: 0
@@ -30462,11 +30463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4966549344434429518}
     - target: {fileID: 2089765823300168821, guid: 327941e42e01f9a42ba34ff61bdeaa87,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: menuExit
+      value: OnDisconnectPressed
       objectReference: {fileID: 0}
     - target: {fileID: 3731508904541455973, guid: 327941e42e01f9a42ba34ff61bdeaa87,
         type: 3}
@@ -30498,6 +30499,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NetworkUnpause
       objectReference: {fileID: 0}
+    - target: {fileID: 2274383579045249187, guid: 327941e42e01f9a42ba34ff61bdeaa87,
+        type: 3}
+      propertyPath: m_Text
+      value: 'RESTART
+
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 327941e42e01f9a42ba34ff61bdeaa87, type: 3}
 --- !u!1 &733391366675309368 stripped
@@ -30524,13 +30533,19 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5424232280691304191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 852533264236722403, guid: 327941e42e01f9a42ba34ff61bdeaa87,
+    type: 3}
+  m_PrefabInstance: {fileID: 4652905582389845532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &755418995984846176 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5398049495638676348, guid: 327941e42e01f9a42ba34ff61bdeaa87,
     type: 3}
   m_PrefabInstance: {fileID: 4652905582389845532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5424232280691304191}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
