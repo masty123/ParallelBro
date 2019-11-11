@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterAnimationController : MonoBehaviour
 {
     public Character2DController character;
+    public PickingThings characterPicking;
     public Animator animator;
 
     bool isFloating;
@@ -20,6 +21,15 @@ public class CharacterAnimationController : MonoBehaviour
     {
         if (character.m_Grounded && Input.GetAxis("Jump") > 0)
             animator.SetBool("isGrounded", true);
+
+        if (characterPicking.holdingItem)
+        {
+            animator.SetBool("isCarrying", true);
+        }
+        else
+        {
+            animator.SetBool("isCarrying", false);
+        }
     }
 
     private void FixedUpdate()

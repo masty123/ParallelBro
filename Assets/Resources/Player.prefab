@@ -367,8 +367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4047622e35500479f609750e604e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 548}
-  animator: {fileID: 517}
+  character: {fileID: 556}
+  characterPicking: {fileID: 561}
+  animator: {fileID: 524}
 --- !u!1001 &3051159129068113046
 PrefabInstance:
   m_ObjectHideFlags: 0
