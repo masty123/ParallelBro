@@ -102,4 +102,12 @@ public class NetworkRPC : MonoBehaviour
     {
         PhotonNetwork.LeaveRoom();
     }
+
+    [PunRPC]
+    public void SetTimer(double time)
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("gamemanager");
+        go.GetComponent<GameManager>().startTime = time;
+        VDebug.Instance.Log(time.ToString());
+    }
 }
