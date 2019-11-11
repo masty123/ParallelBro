@@ -88,13 +88,13 @@ public class NetworkRPC : MonoBehaviour
     [PunRPC]
     public void PauseGame()
     {
-
+        FindObjectOfType<PauseMenuManager>().ClientPause();
     }
 
     [PunRPC]
     public void UnpauseGame()
     {
-
+        FindObjectOfType<PauseMenuManager>().ClientUnpause();
     }
 
     [PunRPC]
