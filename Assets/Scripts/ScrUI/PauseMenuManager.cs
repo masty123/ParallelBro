@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenuManager : MonoBehaviour
 {
-    GameObject pauseCanvas;
+    public GameObject pauseCanvas;
     private PhotonView photonView;
     private NetworkRPC networkRPC;
     private bool isOffline = false;
@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!isOffline)
         {
-            networkRPC.PauseGame();
+            photonView.RPC("PauseGame", RpcTarget.AllBuffered);
         }
         else
         {
@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!isOffline)
         {
-            networkRPC.UnpauseGame();
+            photonView.RPC("UnpauseGame", RpcTarget.AllBuffered);
         }
         else
         {
