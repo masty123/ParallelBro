@@ -122,4 +122,9 @@ public class PlayerAction : MonoBehaviour
         photonView.RPC("Disconnect", RpcTarget.OthersBuffered);
         networkRPC.Disconnect();
     }
+
+    public void ChangeLevel(string roomName, int level)
+    {
+        photonView.RPC("ChangeLevel", RpcTarget.OthersBuffered, roomName, level);
+    }
 }

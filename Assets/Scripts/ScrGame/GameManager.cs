@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
         {
-            startButton.gameObject.SetActive(false);
+            if (startButton.gameObject)
+                startButton.gameObject.SetActive(false);
         }
         else if (PhotonNetwork.IsMasterClient)
         {
@@ -136,7 +137,18 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player other)
     {
-        Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
+        // Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
+        if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
+        {
+            GameObject[] gos = GameObject.FindGameObjectsWithTag("player");
+            foreach (GameObject go in gos)
+            {
+                if (go.GetComponent<PhotonView>().IsMine)
+                {
+                    go.GetComponent<PlayerAction>().ChangeLevel(RoomData.GetInstance().roomName, RoomData.GetInstance().level);
+                }
+            }
+        }
     }
 
 

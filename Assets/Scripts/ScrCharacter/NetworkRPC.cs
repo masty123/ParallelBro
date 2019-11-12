@@ -110,4 +110,11 @@ public class NetworkRPC : MonoBehaviour
         go.GetComponent<GameManager>().startTime = time;
         VDebug.Instance.Log(time.ToString());
     }
+
+    [PunRPC]
+    public void ChangeLevel(string roomName, int level)
+    {
+        RoomData.GetInstance().roomName = roomName;
+        RoomData.GetInstance().level = level;
+    }
 }
