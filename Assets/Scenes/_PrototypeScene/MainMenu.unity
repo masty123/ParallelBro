@@ -643,6 +643,11 @@ PrefabInstance:
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 506246597602856596, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506246597350087067, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_IsActive
