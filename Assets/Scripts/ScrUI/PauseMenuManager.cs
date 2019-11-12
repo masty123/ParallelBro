@@ -3,30 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenuManager : MonoBehaviour
 {
-    GameObject pauseCanvas;
-    private PhotonView photonView;
-    private NetworkRPC networkRPC;
-    private bool isOffline = false;
-
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
-    {
-        photonView = GetComponent<PhotonView>();
-        networkRPC = GetComponent<NetworkRPC>();
-
-        isOffline = !PhotonNetwork.IsConnected;
-    }
+    public GameObject pauseCanvas;
+    public GameObject restartButton;
 
     public void NetworkPause()
     {
-        if (!isOffline)
+        if (PhotonNetwork.IsConnected)
         {
-            networkRPC.PauseGame();
+            FindObjectOfType<PhotonView>().RPC("PauseGame", RpcTarget.AllBuffered);
+            //photonView.RPC("PauseGame", RpcTarget.AllBuffered);
         }
         else
         {
@@ -36,26 +23,66 @@ public class PauseMenu : MonoBehaviour
 
     public void NetworkUnpause()
     {
-        if (!isOffline)
+        if (PhotonNetwork.IsConnected)
         {
-            networkRPC.UnpauseGame();
+            FindObjectOfType<PhotonView>().RPC("UnpauseGame", RpcTarget.AllBuffered);
+            //photonView.RPC("UnpauseGame", RpcTarget.AllBuffered);
         }
         else
         {
+            Debug.Log("Offline unpaused");
             ClientUnpause();
         }
     }
 
     public void ClientPause()
     {
-        Time.timeScale = 0;
+        Debug.Log("Paused");
         pauseCanvas.SetActive(true);
+        //StartCoroutine(ChangeTimeScale(0.5f));
+        if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
+        {
+            restartButton.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator ChangeTimeScale(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Time.timeScale = 0.01f;
     }
 
     public void ClientUnpause()
     {
+        Debug.Log("Unpaused");
         Time.timeScale = 1;
         pauseCanvas.SetActive(false);
+    }
+
+    public void OnDisconnectPressed()
+    {
+        Debug.Log("Disconnect pressed");
+        if (PhotonNetwork.IsConnected)
+        {
+            GameObject[] gos = GameObject.FindGameObjectsWithTag("player");
+            foreach (GameObject go in gos)
+            {
+                if (go.GetComponent<PhotonView>().IsMine)
+                {
+                    PlayerAction pa = go.GetComponent<PlayerAction>();
+                    pa.Disconnect();
+                }
+            }
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("gamemanager").GetComponent<GameManager>().OnLeftRoom();
+        }
+    }
+
+    public void OnRestartPressed()
+    {
+        
     }
 
 }

@@ -473,6 +473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4098828271048194998, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: UserNameText
+      value: 
+      objectReference: {fileID: 1001577056}
     - target: {fileID: 4722989712054036687, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -628,6 +633,11 @@ PrefabInstance:
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 506246597587975804, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506246597602856596, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_Transition
@@ -658,11 +668,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4098828271048194998, guid: 199933b57a1f6cd43b112e57f6143647,
-        type: 3}
-      propertyPath: UserNameText
-      value: 
-      objectReference: {fileID: 1001577056}
     - target: {fileID: 8583204620630837291, guid: 199933b57a1f6cd43b112e57f6143647,
         type: 3}
       propertyPath: m_Name

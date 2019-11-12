@@ -52,5 +52,7 @@ MonoBehaviour:
   - Disconnect
   - PauseGame
   - UnpauseGame
+  - SetTimer
+  - ChangeLevel
   DisableAutoOpenWizard: 1
   ShowSettings: 1

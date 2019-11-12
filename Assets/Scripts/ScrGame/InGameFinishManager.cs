@@ -12,9 +12,9 @@ public class InGameFinishManager : MonoBehaviour
     {
         if (!PhotonNetwork.IsConnected)
         {
-            foreach (GameObject Host in Hosts)
+            foreach (GameObject nonHost in nonHosts)
             {
-                Host.SetActive(false);
+                nonHost.SetActive(false);
             }
             return;
         }
@@ -57,6 +57,22 @@ public class InGameFinishManager : MonoBehaviour
 
     public void LoadLevel(string sceneName)
     {
+        Debug.Log(sceneName);
+        Debug.Log(sceneName.Contains("level"));
+        // set room data
+        int level;
+        if (sceneName.Contains("level"))
+        {
+            level = int.Parse(sceneName.Substring(5, 1));
+        }
+        else
+        {
+            level = int.Parse(sceneName);
+        }
+
+        RoomData.GetInstance().level = level;
+        // sent rpc change other room data
+
         PhotonNetwork.LoadLevel(sceneName);
     }
 

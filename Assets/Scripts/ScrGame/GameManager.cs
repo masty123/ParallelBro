@@ -11,16 +11,22 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject playerPrefab;
     public Button startButton;
+    [HideInInspector]
+    public double startTime;
+    public Text TimerText;
+
     // Start is called before the first frame update
     void Start()
     {
         if (!PhotonNetwork.IsConnected)
         {
-            RoomCodeText.text = "Offline Mode";
+            if (RoomCodeText != null)
+                RoomCodeText.text = "Offline Mode";
         }
         else
         {
-            RoomCodeText.text = PhotonNetwork.CurrentRoom.Name;
+            if (RoomCodeText != null)
+                RoomCodeText.text = PhotonNetwork.CurrentRoom.Name;
             foreach (var player in PhotonNetwork.PlayerList)
             {
                 Debug.Log(player.NickName);
@@ -28,7 +34,21 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
         {
-            startButton.gameObject.SetActive(false);
+            if (startButton.gameObject)
+                startButton.gameObject.SetActive(false);
+        }
+        else if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject myPlayer = null;
+            GameObject[] players = GameObject.FindGameObjectsWithTag("player");
+            foreach (GameObject player in players)
+            {
+                if (player.GetComponent<PhotonView>().IsMine)
+                {
+                    myPlayer = player;
+                }
+            }
+            myPlayer.GetComponent<PhotonView>().RPC("SetTimer", RpcTarget.AllBuffered, PhotonNetwork.Time);
         }
         playerIndex();
     }
@@ -40,6 +60,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         // instancate player prefab
         PhotonNetwork.Instantiate(playerPrefab.name, playerPrefab.transform.position, Quaternion.identity, 0);
+    }
+
+    private void FixedUpdate()
+    {
+        int ActualTime = Mathf.RoundToInt((float)(PhotonNetwork.Time - startTime));
+        int second = ActualTime % 60;
+        int minute = ActualTime / 60;
+        TimerText.text = minute.ToString() + ":" + second.ToString("00");
     }
 
     public void playerIndex()
@@ -109,7 +137,18 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player other)
     {
-        Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
+        // Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
+        if (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient)
+        {
+            GameObject[] gos = GameObject.FindGameObjectsWithTag("player");
+            foreach (GameObject go in gos)
+            {
+                if (go.GetComponent<PhotonView>().IsMine)
+                {
+                    go.GetComponent<PlayerAction>().ChangeLevel(RoomData.GetInstance().roomName, RoomData.GetInstance().level);
+                }
+            }
+        }
     }
 
 

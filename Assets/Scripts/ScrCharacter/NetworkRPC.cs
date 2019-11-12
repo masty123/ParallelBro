@@ -88,18 +88,33 @@ public class NetworkRPC : MonoBehaviour
     [PunRPC]
     public void PauseGame()
     {
-
+        FindObjectOfType<PauseMenuManager>().ClientPause();
     }
 
     [PunRPC]
     public void UnpauseGame()
     {
-
+        FindObjectOfType<PauseMenuManager>().ClientUnpause();
     }
 
     [PunRPC]
     public void Disconnect()
     {
         PhotonNetwork.LeaveRoom();
+    }
+
+    [PunRPC]
+    public void SetTimer(double time)
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("gamemanager");
+        go.GetComponent<GameManager>().startTime = time;
+        VDebug.Instance.Log(time.ToString());
+    }
+
+    [PunRPC]
+    public void ChangeLevel(string roomName, int level)
+    {
+        RoomData.GetInstance().roomName = roomName;
+        RoomData.GetInstance().level = level;
     }
 }
