@@ -13,28 +13,73 @@ public class PlayerMovement : MonoBehaviourPun
 
     bool jump = false;
 
+    private JoystickManager controllerListener;
+
+    private void Start()
+    {
+        // PhotonNetwork.OfflineMode = true;
+        controllerListener = GameObject.Find("ControllerListener").GetComponent<JoystickManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            return;
+        }
 
-            if (Input.GetButtonDown("Jump"))
+        #region Keyboard inputs
+        //keyboard input
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
+        #endregion
+
+        #region On-screen inputs
+        //Onscreen input
+        if (controllerListener != null)
+        {
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                horizontalMove = controllerListener.GetHorizontalRaw() * runSpeed;
+            }
+            /*
+             * Moved to FixedUpdate
+             * 
+            if ( controllerListener.GetJumpDown())
             {
                 jump = true;
             }
+            */
         }
+        #endregion
+
     }
 
     private void FixedUpdate()
     {
-        if (photonView.IsMine)
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
         {
-
-            //Move player
-            controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-            jump = false;
+            return;
         }
+
+        #region On-screen jumping
+        //Onscreen input
+        if (controllerListener != null)
+        {
+            if (controllerListener.GetJumpDown())
+            {
+                jump = true;
+            }
+        }
+        #endregion
+
+        //Move player
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
     }
 }
