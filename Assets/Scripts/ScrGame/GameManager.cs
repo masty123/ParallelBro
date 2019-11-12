@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
         {
-            if (startButton.gameObject)
+            if (startButton)
                 startButton.gameObject.SetActive(false);
         }
         else if (PhotonNetwork.IsMasterClient)

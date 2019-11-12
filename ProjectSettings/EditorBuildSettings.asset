@@ -35,4 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_PrototypeScene/Level8.unity
     guid: cb419eb516616064a9d7ad41cbb9adfb
+    path: Assets/Scenes/_PrototypeScene/Loading.unity
+    guid: e023dad7848378941bfb30dc8e100f18
   m_configObjects: {}
