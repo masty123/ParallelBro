@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class LoadingSceneManager : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class LoadingSceneManager : MonoBehaviour
     IEnumerator LoadSceneWithDelaySeconds()
     {
         yield return new WaitForSeconds(delaySeconds);
-        PhotonNetwork.LoadLevel("level" + RoomData.GetInstance().level);
+
+        if(PhotonNetwork.IsMasterClient)
+           PhotonNetwork.LoadLevel("level" + RoomData.GetInstance().level);
     }
 
     void loadText()

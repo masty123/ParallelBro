@@ -82,7 +82,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void OnRestartPressed()
     {
-        
+        PhotonNetwork.LoadLevel("Loading");
     }
 
 }
