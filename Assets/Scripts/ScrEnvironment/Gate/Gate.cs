@@ -45,8 +45,6 @@ public class Gate : ITargetable
             }
             isOn = true;
         }
-        // throw new System.NotImplementedException();
-        Debug.Log("selfturn " + isOn);
         SpriteRenderer[] sprs = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer spr in sprs)
         {
