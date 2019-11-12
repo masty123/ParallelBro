@@ -4859,6 +4859,10 @@ PrefabInstance:
       propertyPath: RoomCodeText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1176113515, guid: fbd3be3d11406c945bbbaff759a32c9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: level6
+      objectReference: {fileID: 0}
     - target: {fileID: 7119187620264728773, guid: fbd3be3d11406c945bbbaff759a32c9d,
         type: 3}
       propertyPath: DebugText
@@ -4868,10 +4872,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Line
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176113515, guid: fbd3be3d11406c945bbbaff759a32c9d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: level6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd3be3d11406c945bbbaff759a32c9d, type: 3}
@@ -5651,12 +5651,12 @@ PrefabInstance:
     - target: {fileID: 6275434485613136875, guid: 9ddb81071df70a84c95b5dedf61311be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -9.89
       objectReference: {fileID: 0}
     - target: {fileID: 6275434485613136875, guid: 9ddb81071df70a84c95b5dedf61311be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.5
+      value: 20.59
       objectReference: {fileID: 0}
     - target: {fileID: 6275434485613136875, guid: 9ddb81071df70a84c95b5dedf61311be,
         type: 3}
