@@ -44,7 +44,6 @@ public class SwitchTurning : MonoBehaviour
     {
         if(turningSwitch != null)
         {
-            Debug.Log(turningSwitch.requiredKey);
             if (turningSwitch.requiredKey != null && pickingThings.holdingItem != null)
             {
                 if(GameObject.ReferenceEquals(turningSwitch.requiredKey, pickingThings.holdingItem))
@@ -63,9 +62,6 @@ public class SwitchTurning : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        Debug.Log("Hit " + collision.gameObject.name);
-
         Switch collisionSwitch = collision.gameObject.GetComponent<Switch>();
 
         if (collisionSwitch != null)

@@ -28,6 +28,7 @@ public class Switch : IInteractable
                     target.Reset();
                 }
             }
+            this.turn();
             return;
         }
         this.turn();
