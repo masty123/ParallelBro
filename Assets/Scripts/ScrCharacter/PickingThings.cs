@@ -45,7 +45,6 @@ public class PickingThings : MonoBehaviour
 
     private void pickItUp()
     {
-        Debug.Log(holdingItem);
         if (holdingItem == null)
         {
             if (toPickUp != null)

@@ -31,6 +31,30 @@ public class Gate : ITargetable
         _Turn();
     }
 
+    public override void SelfTurn()
+    {
+        if (isToggle)
+        {
+            isOn = !isOn;
+        }
+        else
+        {
+            if (isOn)
+            {
+                return;
+            }
+            isOn = true;
+        }
+        SpriteRenderer[] sprs = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer spr in sprs)
+        {
+            if (spr.gameObject.name == "LowerSprite")
+            {
+                spr.enabled = !isOn;
+            }
+        }
+    }
+
     private void _Turn()
     {
         animator.SetBool("IsOn", isOn);
@@ -42,4 +66,5 @@ public class Gate : ITargetable
         isOn = false;
         _Turn();
     }
+
 }

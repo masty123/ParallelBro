@@ -28,6 +28,7 @@ public class Switch : IInteractable
                     target.Reset();
                 }
             }
+            this.turn();
             return;
         }
         this.turn();
@@ -43,6 +44,13 @@ public class Switch : IInteractable
     public override void SelfInteract()
     {
         this.turn();
+        foreach (ITargetable target in Targets)
+        {
+            if (target != null)
+            {
+                target.SelfTurn();
+            }
+        }
     }
 
     private void turn()
