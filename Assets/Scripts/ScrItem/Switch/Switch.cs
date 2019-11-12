@@ -43,6 +43,13 @@ public class Switch : IInteractable
     public override void SelfInteract()
     {
         this.turn();
+        foreach (ITargetable target in Targets)
+        {
+            if (target != null)
+            {
+                target.SelfTurn();
+            }
+        }
     }
 
     private void turn()

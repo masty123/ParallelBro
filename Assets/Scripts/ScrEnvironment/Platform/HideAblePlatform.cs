@@ -24,6 +24,11 @@ public class HideAblePlatform : ITargetable
         }
     }
 
+    public override void SelfTurn()
+    {
+        // throw new System.NotImplementedException();
+    }
+
     public override void Turn()
     {
         if (isOn && !IsToggle)
