@@ -912,11 +912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566203011, guid: 0f5b3c4182c96674e979e3aeff4c77ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.28
+      value: 12.52
       objectReference: {fileID: 0}
     - target: {fileID: 1566203011, guid: 0f5b3c4182c96674e979e3aeff4c77ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.57
+      value: 7.98
       objectReference: {fileID: 0}
     - target: {fileID: 1566203011, guid: 0f5b3c4182c96674e979e3aeff4c77ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1096,6 +1096,23 @@ MonoBehaviour:
   hideAnimator: 1
   hideCollider: 1
   visiblePlayer: 3
+--- !u!114 &320776682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320776680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fa34be099d7e644ad6c6cecf61a668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideRenderer: 1
+  hideRigidbody: 1
+  hideAnimator: 1
+  hideCollider: 1
+  visiblePlayer: 1
 --- !u!1001 &345896590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1107,6 +1124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ControllerOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495976178427477047, guid: 70c262e8b2d21244589780508e786647,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4495976178427477043, guid: 70c262e8b2d21244589780508e786647,
         type: 3}
@@ -4176,6 +4198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7853785130396877933, guid: fbd3be3d11406c945bbbaff759a32c9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4655746258262105380, guid: fbd3be3d11406c945bbbaff759a32c9d,
         type: 3}
