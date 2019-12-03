@@ -9,6 +9,27 @@ using UnityEngine;
  */
 public class TestingPickUpDestroyAtObject : IPickUp
 {
+    public Sprite BKey;
+
+    public Sprite OKey;
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    public override void Start()
+    {
+        base.Start();
+        VisiblePlayer vp = this.GetComponent<InteractableVisible>().visiblePlayer;
+        if (vp == VisiblePlayer.PLAYER_1)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = BKey;
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = OKey;
+        }
+    }
 
     public GameObject target;
 
