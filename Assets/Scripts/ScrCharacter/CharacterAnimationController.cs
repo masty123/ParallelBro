@@ -24,11 +24,11 @@ public class CharacterAnimationController : MonoBehaviour
 
         if (characterPicking.holdingItem)
         {
-            animator.SetBool("isCarring", true);
+            animator.SetBool("IsCarrying", true);
         }
         else
         {
-            animator.SetBool("isCarring", false);
+            animator.SetBool("IsCarrying", false);
         }
     }
 
