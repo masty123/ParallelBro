@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,10 +93,10 @@ TextureImporter:
       name: Boy-Sprite_0
       rect:
         serializedVersion: 2
-        x: 230
-        y: 207
-        width: 513
-        height: 586
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,7 +104,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82f69742264fa5a42956a1735401d541
+      spriteID: a5490a351868b414e8a1bb417c49b8ae
       vertices: []
       indices: 
       edges: []
@@ -113,10 +113,10 @@ TextureImporter:
       name: Boy-Sprite_1
       rect:
         serializedVersion: 2
-        x: 1232
-        y: 207
-        width: 510
-        height: 586
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8dfc9b6dbb2a7b40b2386efc9f4c251
+      spriteID: be3071dc2a3806446a0fecdf0523d839
       vertices: []
       indices: 
       edges: []
@@ -133,10 +133,10 @@ TextureImporter:
       name: Boy-Sprite_2
       rect:
         serializedVersion: 2
-        x: 2200
-        y: 207
-        width: 541
-        height: 586
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcc545c93e8a20c43aba48d60a4f69ea
+      spriteID: 0a03342014644da4da044a9832481e64
       vertices: []
       indices: 
       edges: []
@@ -153,10 +153,10 @@ TextureImporter:
       name: Boy-Sprite_3
       rect:
         serializedVersion: 2
-        x: 3201
-        y: 207
-        width: 542
-        height: 586
+        x: 3000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad18ed46a1aac494596a72434c00b9e3
+      spriteID: 1b2a639e2b8ba9e47a65ea5d86baec66
       vertices: []
       indices: 
       edges: []
@@ -173,10 +173,10 @@ TextureImporter:
       name: Boy-Sprite_4
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 207
-        width: 542
-        height: 586
+        x: 4000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6deb860ec9a8da441993578cbf64a1fb
+      spriteID: 73e99c09f221f90478a3979e2b71fc9b
       vertices: []
       indices: 
       edges: []
@@ -193,10 +193,10 @@ TextureImporter:
       name: Boy-Sprite_5
       rect:
         serializedVersion: 2
-        x: 5200
-        y: 207
-        width: 588
-        height: 586
+        x: 5000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2601dddea15430c4ab179c5236d61647
+      spriteID: 6a1295ad37827f24aaadf4f865997db3
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 315f9d65bd5211b4db811fdba5b827f5
+    spriteID: 742f36596faf5a34e8178d8fa9dc5ead
     vertices: []
     indices: 
     edges: []
