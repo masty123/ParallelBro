@@ -311,5 +311,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289112402025183002, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 81fa0a466fc8240448f455f6498d33b8, type: 2}
+    - target: {fileID: 1545765384506624275, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 81fa0a466fc8240448f455f6498d33b8, type: 2}
+    - target: {fileID: 6330957422829075926, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470354950935737520, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722989713576744866, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199933b57a1f6cd43b112e57f6143647, type: 3}
