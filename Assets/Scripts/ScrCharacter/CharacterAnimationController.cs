@@ -20,18 +20,29 @@ public class CharacterAnimationController : MonoBehaviour
     {
         rb = character.GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindGameObjectWithTag("gamemanager").GetComponent<GameManager>();
-        timeBeforeGlitch = RandomGlitchTime();
+        if(gameObject.layer == 12)
+        {
+            timeBeforeGlitch = RandomGlitchTime();
+        }
+        else
+        {
+            timeBeforeGlitch = -1;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         actualTime = Mathf.RoundToInt((float)(PhotonNetwork.Time - gameManager.startTime));
-        //if(timeBeforeGlitch)
+        if (timeBeforeGlitch != -1 && Time.time >= timeBeforeGlitch)
+        {
+            animator.SetTrigger("GlitchTrigger");
+            timeBeforeGlitch = actualTime + RandomGlitchTime();
+        }
 
 
         if (character.m_Grounded && Input.GetAxis("Jump") > 0)
-            animator.SetBool("isGrounded", true);
+        animator.SetBool("isGrounded", true);
 
         if (characterPicking.holdingItem)
         {
