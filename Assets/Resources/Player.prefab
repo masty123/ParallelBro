@@ -906,11 +906,6 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3509288348773026857, guid: 67322d5877f5d20448208e0ec3b23478,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 1431993406747692903, guid: 67322d5877f5d20448208e0ec3b23478,
         type: 3}
       propertyPath: character
@@ -921,6 +916,11 @@ Prefab:
       propertyPath: characterPicking
       value: 
       objectReference: {fileID: 585}
+    - target: {fileID: 3509288348773026857, guid: 67322d5877f5d20448208e0ec3b23478,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67322d5877f5d20448208e0ec3b23478, type: 3}
   m_RootGameObject: {fileID: 0}

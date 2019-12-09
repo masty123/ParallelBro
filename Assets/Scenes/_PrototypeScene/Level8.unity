@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &43267448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -637,6 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: -0.1
+  isFolllowVertical: 0
 --- !u!212 &77939508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -902,6 +904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &96714441
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -994,6 +997,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1047,11 +1055,6 @@ PrefabInstance:
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1420,6 +1423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &148704973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1701,6 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &181059232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1960,6 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &200781326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2441,6 +2447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &265798585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2562,6 +2569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &272672545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2767,6 +2775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &277184958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3190,6 +3199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &323664175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3445,6 +3455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &334498797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3574,6 +3585,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3628,11 +3644,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684431bab364f394a8dca2354e7e7d32, type: 3}
@@ -3741,6 +3752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &343760527
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4457,6 +4469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &430656345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4906,6 +4919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &476051809
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5299,6 +5313,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5352,11 +5371,6 @@ PrefabInstance:
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5609,6 +5623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &528357942
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5912,6 +5927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &561567384
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6008,6 +6024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: -0.2
+  isFolllowVertical: 0
 --- !u!212 &571381953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6129,6 +6146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &578813595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6250,6 +6268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &578837574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6298,6 +6317,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &606943157
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3813407121408501756, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundWorm (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -65.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.71281594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7013512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.929
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 131f8a2818a1eee46997bc7cbf1b6328, type: 3}
 --- !u!1001 &620851383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6618,6 +6706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &668471792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6808,6 +6897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &678823402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7146,6 +7236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &702921388
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7479,6 +7570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &736140300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7713,6 +7805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &768129523
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7915,6 +8008,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7968,11 +8066,6 @@ PrefabInstance:
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: isOn
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8406,6 +8499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &863563840
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9197,6 +9291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &952900662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9245,6 +9340,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &955766949
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3813407121408501756, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundWorm (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -61.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.71281594
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7013512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 191
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813407121408501759, guid: 131f8a2818a1eee46997bc7cbf1b6328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.929
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 131f8a2818a1eee46997bc7cbf1b6328, type: 3}
 --- !u!1001 &957053081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9972,6 +10136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1033574074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10490,6 +10655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1070821102
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10611,6 +10777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1077837649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11151,6 +11318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1141651552
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12370,6 +12538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1238945034
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12491,6 +12660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1261324911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12820,6 +12990,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12873,11 +13048,6 @@ PrefabInstance:
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13141,6 +13311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1339320720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13262,6 +13433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1353152127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13383,6 +13555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1353968735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13837,6 +14010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1410510518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14376,6 +14550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1436953105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14796,6 +14971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1462124794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14917,6 +15093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1462605932
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15412,6 +15589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1547392871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15770,6 +15948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1555942762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15830,6 +16009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15883,11 +16067,6 @@ PrefabInstance:
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16251,6 +16430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1628149066
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16528,6 +16708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16582,11 +16767,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684431bab364f394a8dca2354e7e7d32, type: 3}
@@ -16946,6 +17126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 1
+  isFolllowVertical: 0
 --- !u!212 &1763220095
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17593,6 +17774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1812382314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17810,6 +17992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1813735199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18155,6 +18338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1829125459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18276,6 +18460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1857545874
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18550,6 +18735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1875989357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18671,6 +18857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1885123110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19004,6 +19191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1930880531
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19157,6 +19345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1949236408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19347,6 +19536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1954469458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19667,6 +19857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &1994862446
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19820,6 +20011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &2000028760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19879,6 +20071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HideAbleGroundLong (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: isOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
@@ -19949,11 +20146,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.74172
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: isOn
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684431bab364f394a8dca2354e7e7d32, type: 3}
@@ -20127,6 +20319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HideAbleGroundLong (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
+        type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2291057534976044341, guid: 684431bab364f394a8dca2354e7e7d32,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20181,11 +20378,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798095189182338856, guid: 684431bab364f394a8dca2354e7e7d32,
-        type: 3}
-      propertyPath: isOn
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684431bab364f394a8dca2354e7e7d32, type: 3}
@@ -20301,6 +20493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &2095100439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20518,6 +20711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   parallaxEffect: 0
+  isFolllowVertical: 0
 --- !u!212 &2110689089
 SpriteRenderer:
   m_ObjectHideFlags: 0
