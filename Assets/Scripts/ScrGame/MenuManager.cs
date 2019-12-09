@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public GameObject LevelScreen;
     public GameObject CharacterScreen;
     public GameObject JoinScreen;
+    public GameObject CreditScreen;
     public GameObject titleText;
     public Text UserNameText;
     public InputField RoomCodeText;
@@ -194,6 +195,19 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public string GetRandomName()
     {
         return names[Random.Range(0, names.Length)];
+    }
+
+    public void creditScreen()
+    {
+        CreditScreen.SetActive(true);
+        LoginScreen.SetActive(false);
+    }
+
+
+    public void creditBack()
+    {
+        CreditScreen.SetActive(false);
+        LoginScreen.SetActive(true);
     }
 
     public void Exit()

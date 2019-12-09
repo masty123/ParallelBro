@@ -225,6 +225,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2924014eb43b45d4b967bc0e2df07269, type: 3}
+--- !u!1 &590110158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1206334197787590730, guid: 199933b57a1f6cd43b112e57f6143647,
+    type: 3}
+  m_PrefabInstance: {fileID: 1592726469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091812686
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +591,86 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246597350087067, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246597029972625, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5996094
+      objectReference: {fileID: 0}
+    - target: {fileID: 506246598211127378, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5996094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098828271048194998, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: CreditScreen
+      value: 
+      objectReference: {fileID: 590110158}
+    - target: {fileID: 4801044508444318927, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289112402025182982, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -346.9922
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289112402025182982, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.99512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289112402015507711, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Name
+      value: text
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289112402025182981, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: creditScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289112402025183002, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 81fa0a466fc8240448f455f6498d33b8, type: 2}
+    - target: {fileID: 1310990357174381076, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506085806784792978, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -346.9922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506085806784792978, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.99512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545765384506624268, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: creditBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545765384506624275, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 81fa0a466fc8240448f455f6498d33b8, type: 2}
+    - target: {fileID: 1545765384520559350, guid: 199933b57a1f6cd43b112e57f6143647,
+        type: 3}
+      propertyPath: m_Name
+      value: text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199933b57a1f6cd43b112e57f6143647, type: 3}
