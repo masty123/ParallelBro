@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlitchMat
+  m_Name: GlitchMat 1
   m_Shader: {fileID: 4800000, guid: 70dcdf74d4a3f874ebdf8f404304c8e0, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_4FD11D93:
-        m_Texture: {fileID: 2800000, guid: 8b913a6659db1584d826c4df3e0ddc47, type: 3}
+        m_Texture: {fileID: 2800000, guid: e310fe043e2a004489d07b1933e917e4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
