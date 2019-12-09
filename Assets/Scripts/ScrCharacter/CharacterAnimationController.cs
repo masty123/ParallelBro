@@ -34,7 +34,7 @@ public class CharacterAnimationController : MonoBehaviour
     void Update()
     {
         actualTime = Mathf.RoundToInt((float)(PhotonNetwork.Time - gameManager.startTime));
-        if (timeBeforeGlitch != -1 && Time.time >= timeBeforeGlitch)
+        if (timeBeforeGlitch != -1 && actualTime >= timeBeforeGlitch)
         {
             animator.SetTrigger("GlitchTrigger");
             timeBeforeGlitch = actualTime + RandomGlitchTime();
