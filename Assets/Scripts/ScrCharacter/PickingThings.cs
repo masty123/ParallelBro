@@ -6,8 +6,10 @@ using Photon.Pun;
 public class PickingThings : MonoBehaviour
 {
     private PhotonView photonView;
-    public GameObject toPickUp;
-    public GameObject holdingItem;
+    [HideInInspector] public GameObject toPickUp;
+    [HideInInspector] public GameObject holdingItem;
+
+    [SerializeField] private AudioSource pickupSound;
 
     JoystickManager controllerListener;
 
@@ -56,6 +58,10 @@ public class PickingThings : MonoBehaviour
                     // fire action to player
                     GetComponent<PlayerAction>().PickUp(id);
                     // PickUpItem();
+                    if (pickupSound != null)
+                    {
+                        pickupSound.Play();
+                    }
                 }
             }
         }
