@@ -32,6 +32,9 @@ public class Character2DController : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    [SerializeField] private AudioSource walkingSound;
+    [SerializeField] private AudioSource jumpingSound;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -123,6 +126,18 @@ public class Character2DController : MonoBehaviour
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+            if (move != 0)
+            {
+                if (walkingSound != null)
+                {
+                    if (walkingSound.isPlaying == false)
+                    {
+                        walkingSound.Play();
+                    }
+                }
+            }
+
         }
         // If the player should jump...
         if (m_Grounded && jump)
@@ -130,6 +145,10 @@ public class Character2DController : MonoBehaviour
             // Add a vertical force to the player.
             m_Grounded = false;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            if(jumpingSound != null)
+            {
+                jumpingSound.Play();
+            }
         }
     }
 
