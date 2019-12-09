@@ -136,8 +136,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Character2DController+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  walkingSound: {fileID: 0}
-  jumpingSound: {fileID: 0}
+  walkingSound: {fileID: 2775980758724698838}
+  jumpingSound: {fileID: 4422520299753079091}
 --- !u!114 &579
 MonoBehaviour:
   m_ObjectHideFlags: 0
