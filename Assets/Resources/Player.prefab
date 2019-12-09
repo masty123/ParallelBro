@@ -348,6 +348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FemaleCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2856956268772610200, guid: 2eba6fc70f339234b89ded3a79e920c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2279958267074889040, guid: 2eba6fc70f339234b89ded3a79e920c8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -508,7 +513,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 52eadd34705d5d64881905ed58371854, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67322d5877f5d20448208e0ec3b23478, type: 3}
 --- !u!1 &2856956268772610200 stripped
