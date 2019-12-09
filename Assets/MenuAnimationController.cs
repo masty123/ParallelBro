@@ -6,8 +6,7 @@ public class MenuAnimationController : MonoBehaviour
 {
     private Animator boyAnimator;
     private Animator girlAnimator;
-
-    private GameManager gameManager;
+    
     private int actualTime;
     private int timeBeforeBoyGlitch;
     private int timeBeforeGirlGlitch;
@@ -19,7 +18,6 @@ public class MenuAnimationController : MonoBehaviour
         boyAnimator = transform.Find("Boy").gameObject.GetComponent<Animator>();
         girlAnimator = transform.Find("Girl").gameObject.GetComponent<Animator>();
 
-        gameManager = GameObject.FindGameObjectWithTag("gamemanager").GetComponent<GameManager>();
         timeBeforeBoyGlitch = RandomTime();
         timeBeforeGirlGlitch = RandomTime();
     }
@@ -28,7 +26,7 @@ public class MenuAnimationController : MonoBehaviour
     void Update()
     {
         actualTime = Mathf.RoundToInt(Time.time);
-        Debug.Log(timeBeforeBoyGlitch+" "+actualTime);
+        //Debug.Log(timeBeforeBoyGlitch+" "+actualTime);
         if (actualTime == timeBeforeBoyGlitch)
         {
             boyAnimator.SetTrigger("GlitchTrigger");
