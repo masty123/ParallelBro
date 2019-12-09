@@ -8,6 +8,8 @@ public class Transferable : MonoBehaviour
     private VisiblePlayer visiblePlayer;
     private InteractableVisible visibility;
 
+    [SerializeField] private AudioSource transferSound;
+
     private void Start()
     {
         visibility = this.GetComponent<InteractableVisible>();
@@ -21,6 +23,10 @@ public class Transferable : MonoBehaviour
             Debug.Log("Dropped at gate");
             // Change Ownership
             ChangeOwnership(this.GetComponent<IInteractable>().ID);
+            if(transferSound != null)
+            {
+                transferSound.Play();
+            }
         }
     }
 
