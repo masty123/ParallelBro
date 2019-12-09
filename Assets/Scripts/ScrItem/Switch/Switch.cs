@@ -67,6 +67,10 @@ public class Switch : IInteractable
             }
             isOn = true;
         }
+        if(GetComponent<AudioSource>() != null)
+        {
+            GetComponent<AudioSource>().Play();
+        }
         animator.SetBool("IsOn", isOn);
     }
 
