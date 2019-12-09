@@ -20,7 +20,7 @@ public class CharacterAnimationController : MonoBehaviour
     {
         rb = character.GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindGameObjectWithTag("gamemanager").GetComponent<GameManager>();
-        if(gameObject.layer == 12)
+        if(transform.parent.gameObject.layer == 12)
         {
             timeBeforeGlitch = RandomGlitchTime();
         }
